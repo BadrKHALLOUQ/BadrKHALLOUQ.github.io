@@ -3015,6 +3015,151 @@ body.modal-open {
   }
 }
 
+
+/* ============================================================
+   FINAL PROFILE CARD — GEOSPATIAL GLASSMORPHISM
+   ============================================================ */
+
+.profile-card {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(7, 48, 73, 0.76) 0%,
+      rgba(7, 57, 82, 0.62) 48%,
+      rgba(4, 34, 57, 0.72) 100%
+    ) !important;
+
+  border: 1px solid rgba(102, 221, 255, 0.70) !important;
+  border-radius: 18px;
+
+  -webkit-backdrop-filter: blur(15px) saturate(135%);
+  backdrop-filter: blur(15px) saturate(135%);
+
+  box-shadow:
+    0 26px 65px rgba(2, 27, 45, 0.32),
+    0 0 0 1px rgba(255,255,255,0.07) inset,
+    0 1px 0 rgba(255,255,255,0.18) inset !important;
+
+  color: #ffffff;
+}
+
+/* Very subtle illuminated glass layer */
+.profile-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 78% 8%, rgba(70,220,255,.18), transparent 31%),
+    linear-gradient(135deg, rgba(255,255,255,.10), transparent 42%);
+}
+
+.profile-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Portrait */
+.profile-card img {
+  border: 5px solid rgba(255,255,255,.96) !important;
+  box-shadow:
+    0 0 0 3px rgba(65,216,255,.28),
+    0 12px 34px rgba(1,24,40,.34),
+    0 0 27px rgba(48,205,247,.24) !important;
+}
+
+/* Name */
+.profile-card h3,
+.profile-card .profile-name {
+  color: #ffffff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+
+/* Engineer · Researcher */
+.profile-card .profile-role,
+.profile-card .profile-title {
+  color: #43dcff !important;
+  font-weight: 750;
+}
+
+/* Rabat, Morocco */
+.profile-card .profile-location {
+  color: rgba(232,247,255,.88) !important;
+}
+
+/* Existing divider(s) */
+.profile-card hr,
+.profile-card .profile-divider {
+  border-color: transparent !important;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(105,221,255,.68),
+      transparent
+    ) !important;
+  opacity: 1;
+}
+
+/* Bottom specialization line */
+.profile-card .profile-meta,
+.profile-card .profile-tags,
+.profile-card .profile-specialties {
+  color: #b9ecff !important;
+  font-weight: 750;
+  letter-spacing: .7px;
+}
+
+/* Fallback selectors for the exact current card structure */
+.profile-card p {
+  color: rgba(232,247,255,.88);
+}
+
+.profile-card p strong,
+.profile-card strong {
+  color: #43dcff;
+}
+
+.profile-card .profile-card-footer,
+.profile-card .profile-card-footer span {
+  color: #b9ecff !important;
+}
+
+/* Fine cyan edge light */
+.profile-card::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  left: 12%;
+  right: 12%;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(71,218,255,.88),
+    transparent
+  );
+  box-shadow: 0 0 14px rgba(71,218,255,.42);
+}
+
+@media (max-width: 680px) {
+  .profile-card {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(7,48,73,.84),
+        rgba(4,34,57,.78)
+      ) !important;
+  }
+}
+
 </style>
 
 </head>
