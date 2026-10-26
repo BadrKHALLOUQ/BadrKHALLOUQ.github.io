@@ -1,5 +1,7 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +9,71 @@
   <title>Dr. Badr KHALLOUQ | State Engineer & PhD in Geography</title>
 
   <meta name="description"
-        content="Dr. Badr KHALLOUQ — State Engineer and PhD in Geography. Territorial dynamics, land governance, GIS, GeoAI, cartography, territorial planning and geospatial research.">
+        content="Professional and academic portfolio of Dr. Badr KHALLOUQ — State Engineer and PhD in Geography specialising in territorial dynamics, land governance, GIS, GeoAI, cartography, territorial planning and geospatial research.">
+
+  <meta name="author" content="Dr. Badr KHALLOUQ">
+
+  <meta name="keywords"
+        content="Badr Khallouq, Geography, GIS, GeoAI, Land Governance, Cadastre, Territorial Planning, Remote Sensing, Cartography, Morocco">
+
+  <meta property="og:title"
+        content="Dr. Badr KHALLOUQ | State Engineer & PhD in Geography">
+
+  <meta property="og:description"
+        content="Territorial Dynamics · Land Governance · Geospatial Technologies · Research">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url"
+        content="https://badrkhallouq.github.io/">
+
+  <meta property="og:image"
+        content="https://badrkhallouq.github.io/badr-khallouq.png">
+
 
   <style>
+
+    /* ==========================================================
+       DESIGN SYSTEM
+       ========================================================== */
+
     :root {
-      --navy: #0b2742;
-      --navy-2: #123b5d;
+
+      --navy-950: #061827;
+      --navy-900: #0a2237;
+      --navy-850: #0c2b45;
+      --navy-800: #103852;
+
       --blue: #0877d1;
-      --blue-light: #5db4e8;
+      --blue-dark: #0866b2;
+      --blue-soft: #dceef9;
+
       --cyan: #48b7c9;
-      --ink: #18344d;
-      --text: #4f6b82;
-      --muted: #7890a4;
-      --line: #dce7ef;
-      --soft: #f4f8fb;
-      --soft-2: #eef5f8;
+      --cyan-soft: #dff4f5;
+
+      --green-orcid: #a6ce39;
+
+      --ink: #16334a;
+      --text: #526c80;
+      --muted: #7b91a2;
+
+      --line: #dce7ee;
+      --line-dark: rgba(255,255,255,0.13);
+
       --white: #ffffff;
-      --earth: #9a8468;
-      --shadow: 0 18px 50px rgba(11, 39, 66, 0.10);
+
+      --soft: #f5f8fa;
+      --soft-blue: #edf5f9;
+
+      --shadow:
+        0 22px 60px rgba(7, 31, 51, 0.10);
+
+      --shadow-small:
+        0 12px 30px rgba(7, 31, 51, 0.07);
+
+      --radius: 10px;
     }
+
 
     * {
       margin: 0;
@@ -33,1587 +81,3906 @@
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
       color: var(--ink);
+
       background: var(--white);
+
       line-height: 1.7;
+
       overflow-x: hidden;
     }
+
 
     a {
       color: inherit;
     }
 
+
+    button {
+      font: inherit;
+    }
+
+
     section {
       scroll-margin-top: 82px;
     }
+
 
     .container {
       width: min(1180px, calc(100% - 48px));
       margin: auto;
     }
 
-    /* =========================
+
+
+    /* ==========================================================
        NAVIGATION
-       ========================= */
+       ========================================================== */
 
     header {
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(220,231,239,0.9);
+
+      background:
+        rgba(255, 255, 255, 0.92);
+
+      backdrop-filter:
+        blur(18px);
+
+      -webkit-backdrop-filter:
+        blur(18px);
+
+      border-bottom:
+        1px solid rgba(210, 225, 234, 0.85);
     }
 
+
     nav {
-      width: min(1180px, calc(100% - 48px));
+      width:
+        min(1180px, calc(100% - 48px));
+
       min-height: 76px;
+
       margin: auto;
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       gap: 30px;
     }
 
+
     .brand {
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+
       text-decoration: none;
+
+      color: var(--navy-900);
+
+      font-size: 19px;
+
       font-weight: 800;
-      color: var(--navy);
-      font-size: 20px;
-      letter-spacing: 0.2px;
+
+      letter-spacing: 0.3px;
+
       white-space: nowrap;
     }
 
+
+    .brand-mark {
+      width: 31px;
+      height: 31px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy-900),
+          var(--blue)
+        );
+
+      color: white;
+
+      font-size: 10px;
+
+      letter-spacing: 0.5px;
+
+      box-shadow:
+        0 7px 18px rgba(8,119,209,0.18);
+    }
+
+
     .nav-links {
       display: flex;
+
       align-items: center;
-      gap: 25px;
+
+      gap: 26px;
+
       list-style: none;
     }
 
+
     .nav-links a {
+      position: relative;
+
       text-decoration: none;
-      color: #425d73;
-      font-size: 14px;
-      font-weight: 600;
+
+      color: #405d73;
+
+      font-size: 13px;
+
+      font-weight: 650;
+
       transition: 0.2s ease;
     }
+
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 100%;
+      bottom: -7px;
+
+      height: 2px;
+
+      background: var(--blue);
+
+      transition: right 0.22s ease;
+    }
+
 
     .nav-links a:hover {
       color: var(--blue);
     }
 
-    /* =========================
+
+    .nav-links a:hover::after {
+      right: 0;
+    }
+
+
+
+    /* ==========================================================
        HERO
-       ========================= */
+       ========================================================== */
 
     .hero {
       position: relative;
-      min-height: calc(100vh - 76px);
+
+      min-height:
+        calc(100vh - 76px);
+
       display: flex;
+
       align-items: center;
+
       overflow: hidden;
+
+      isolation: isolate;
+
       background:
-        linear-gradient(110deg, #ffffff 0%, #ffffff 55%, #f2f7fa 55%, #edf4f8 100%);
+        linear-gradient(
+          105deg,
+          #ffffff 0%,
+          #ffffff 46%,
+          #f7fafc 67%,
+          #edf4f7 100%
+        );
     }
 
-    /* Dynamic geospatial background */
+
+
+    /* ==========================================================
+       PROFESSIONAL GEOSPATIAL BACKGROUND
+       ========================================================== */
 
     .geo-background {
       position: absolute;
+
       inset: 0;
+
       overflow: hidden;
+
       pointer-events: none;
-      opacity: 0.72;
+
+      z-index: -1;
     }
+
+
+    /*
+      Large professional cartographic glow
+    */
+
+    .geo-background::before {
+      content: "";
+
+      position: absolute;
+
+      width: 900px;
+      height: 900px;
+
+      right: -290px;
+      top: -330px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(8,119,209,0.10) 0%,
+          rgba(72,183,201,0.055) 32%,
+          rgba(255,255,255,0) 69%
+        );
+    }
+
+
+    .geo-background::after {
+      content: "";
+
+      position: absolute;
+
+      width: 700px;
+      height: 700px;
+
+      right: 8%;
+      bottom: -520px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(8,119,209,0.10);
+
+      box-shadow:
+        0 0 0 80px rgba(8,119,209,0.018),
+        0 0 0 160px rgba(8,119,209,0.012),
+        0 0 0 240px rgba(8,119,209,0.008);
+    }
+
+
+
+    /* CARTOGRAPHIC GRID */
 
     .geo-grid {
       position: absolute;
-      inset: -100px;
+
+      inset: -180px;
+
+      opacity: 0.75;
+
       background-image:
-        linear-gradient(rgba(8,119,209,0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(8,119,209,0.055) 1px, transparent 1px);
-      background-size: 54px 54px;
-      transform: perspective(700px) rotateX(63deg) translateY(200px) scale(1.4);
-      transform-origin: center bottom;
-      animation: gridMove 18s linear infinite;
-      mask-image: linear-gradient(to right, transparent 5%, transparent 35%, black 70%);
+
+        linear-gradient(
+          rgba(8,119,209,0.045) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(8,119,209,0.045) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        58px 58px;
+
+      transform:
+        perspective(800px)
+        rotateX(62deg)
+        translateY(290px)
+        scale(1.35);
+
+      transform-origin:
+        center bottom;
+
+      animation:
+        gridMove 24s linear infinite;
+
+      -webkit-mask-image:
+        linear-gradient(
+          to right,
+          transparent 0%,
+          transparent 33%,
+          black 66%,
+          black 100%
+        );
+
+      mask-image:
+        linear-gradient(
+          to right,
+          transparent 0%,
+          transparent 33%,
+          black 66%,
+          black 100%
+        );
     }
 
+
     @keyframes gridMove {
+
       from {
         background-position: 0 0;
       }
+
       to {
-        background-position: 54px 54px;
+        background-position: 58px 58px;
       }
+
     }
+
+
+
+    /* TOPOGRAPHIC CONTOURS */
+
+    .topo-map {
+      position: absolute;
+
+      width: 690px;
+      height: 600px;
+
+      right: -55px;
+      top: 40px;
+
+      opacity: 0.65;
+
+      animation:
+        mapFloat 16s ease-in-out infinite alternate;
+    }
+
 
     .contour {
       position: absolute;
-      border: 1px solid rgba(8,119,209,0.14);
-      border-radius: 46% 54% 58% 42% / 45% 39% 61% 55%;
-      animation: contourFloat 12s ease-in-out infinite alternate;
+
+      border:
+        1px solid rgba(10,105,167,0.14);
+
+      border-radius:
+        43% 57% 61% 39% /
+        54% 41% 59% 46%;
     }
 
+
     .contour.c1 {
-      width: 620px;
-      height: 380px;
-      right: -110px;
-      top: 70px;
-      transform: rotate(-12deg);
+      width: 610px;
+      height: 410px;
+
+      right: 10px;
+      top: 30px;
+
+      transform: rotate(-9deg);
     }
+
 
     .contour.c2 {
       width: 520px;
-      height: 320px;
-      right: -35px;
-      top: 125px;
-      transform: rotate(5deg);
-      animation-delay: -3s;
+      height: 345px;
+
+      right: 62px;
+      top: 73px;
+
+      transform: rotate(-5deg);
     }
+
 
     .contour.c3 {
-      width: 410px;
-      height: 255px;
-      right: 45px;
-      top: 180px;
-      transform: rotate(-7deg);
-      animation-delay: -6s;
+      width: 430px;
+      height: 285px;
+
+      right: 108px;
+      top: 108px;
+
+      transform: rotate(3deg);
     }
+
 
     .contour.c4 {
-      width: 720px;
-      height: 440px;
-      right: -230px;
-      bottom: -180px;
-      transform: rotate(11deg);
-      animation-delay: -8s;
+      width: 340px;
+      height: 225px;
+
+      right: 151px;
+      top: 140px;
+
+      transform: rotate(-5deg);
     }
 
-    @keyframes contourFloat {
-      from {
-        transform: translateY(-8px) rotate(-4deg);
-      }
-      to {
-        transform: translateY(14px) rotate(4deg);
-      }
+
+    .contour.c5 {
+      width: 250px;
+      height: 165px;
+
+      right: 194px;
+      top: 171px;
+
+      transform: rotate(6deg);
     }
+
+
+    @keyframes mapFloat {
+
+      from {
+        transform:
+          translateY(-7px)
+          rotate(-1deg);
+      }
+
+      to {
+        transform:
+          translateY(12px)
+          rotate(1deg);
+      }
+
+    }
+
+
+
+    /* PARCEL / CADASTRAL LINES */
+
+    .parcel {
+      position: absolute;
+
+      border:
+        1px solid rgba(8,119,209,0.085);
+
+      transform:
+        rotate(-11deg);
+
+      border-radius: 2px;
+    }
+
+
+    .parcel.p1 {
+      width: 170px;
+      height: 110px;
+
+      right: 22%;
+      bottom: 14%;
+    }
+
+
+    .parcel.p2 {
+      width: 130px;
+      height: 84px;
+
+      right: 10%;
+      bottom: 25%;
+    }
+
+
+    .parcel.p3 {
+      width: 105px;
+      height: 150px;
+
+      right: 31%;
+      bottom: 8%;
+    }
+
+
+
+    /* GEOSPATIAL NETWORK */
 
     .territorial-line {
       position: absolute;
-      width: 430px;
+
       height: 1px;
-      right: 6%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(72,183,201,0.45),
-        transparent
-      );
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(8,119,209,0.38),
+          rgba(72,183,201,0.30),
+          transparent
+        );
+
       transform-origin: center;
     }
 
+
     .territorial-line.l1 {
-      top: 33%;
-      transform: rotate(28deg);
+      width: 500px;
+
+      right: 3%;
+
+      top: 35%;
+
+      transform:
+        rotate(28deg);
     }
+
 
     .territorial-line.l2 {
-      top: 55%;
-      transform: rotate(-21deg);
+      width: 430px;
+
+      right: 12%;
+
+      top: 59%;
+
+      transform:
+        rotate(-21deg);
     }
 
+
     .territorial-line.l3 {
-      top: 68%;
-      transform: rotate(11deg);
+      width: 360px;
+
+      right: 3%;
+
+      top: 72%;
+
+      transform:
+        rotate(11deg);
     }
+
+
+
+    /* NODES */
 
     .geo-node {
       position: absolute;
-      width: 8px;
-      height: 8px;
+
+      width: 7px;
+      height: 7px;
+
       border-radius: 50%;
+
       background: var(--blue);
-      box-shadow: 0 0 0 6px rgba(8,119,209,0.08);
-      animation: pulse 3.2s ease-in-out infinite;
+
+      border:
+        2px solid rgba(255,255,255,0.9);
+
+      box-shadow:
+        0 0 0 6px rgba(8,119,209,0.08);
+
+      animation:
+        nodePulse 4s ease-in-out infinite;
     }
 
+
     .geo-node.n1 {
-      right: 12%;
-      top: 22%;
+      right: 13%;
+      top: 23%;
     }
+
 
     .geo-node.n2 {
       right: 31%;
-      top: 48%;
+      top: 49%;
+
       animation-delay: -1s;
     }
 
+
     .geo-node.n3 {
       right: 8%;
-      top: 72%;
+      top: 71%;
+
       animation-delay: -2s;
     }
 
+
     .geo-node.n4 {
       right: 39%;
-      top: 78%;
-      animation-delay: -0.5s;
+      top: 77%;
+
+      animation-delay: -3s;
     }
 
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.35;
-        transform: scale(0.85);
+
+    @keyframes nodePulse {
+
+      0%,
+      100% {
+        opacity: 0.45;
+        transform: scale(0.88);
       }
+
       50% {
         opacity: 1;
-        transform: scale(1.15);
+        transform: scale(1.12);
       }
+
     }
+
+
+
+    /* SMALL MAP COORDINATES */
+
+    .map-coordinate {
+      position: absolute;
+
+      color:
+        rgba(31, 92, 132, 0.34);
+
+      font-family:
+        "Courier New",
+        monospace;
+
+      font-size: 9px;
+
+      letter-spacing: 1.2px;
+    }
+
+
+    .coord-1 {
+      right: 5%;
+      top: 18%;
+    }
+
+
+    .coord-2 {
+      right: 34%;
+      bottom: 10%;
+    }
+
+
+
+    /* ==========================================================
+       HERO CONTENT
+       ========================================================== */
 
     .hero-inner {
       position: relative;
+
       z-index: 5;
-      width: min(1180px, calc(100% - 48px));
+
+      width:
+        min(1180px, calc(100% - 48px));
+
       margin: auto;
-      padding: 76px 0 82px;
+
+      padding:
+        76px 0 84px;
+
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 80px;
+
+      grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(300px, 0.65fr);
+
+      gap: 78px;
+
       align-items: center;
     }
+
 
     .hero-kicker {
       display: inline-flex;
+
       align-items: center;
-      gap: 10px;
+
+      gap: 11px;
+
       color: var(--blue);
-      font-size: 13px;
+
+      font-size: 12px;
+
       font-weight: 800;
-      letter-spacing: 2.2px;
+
+      letter-spacing: 2.1px;
+
       text-transform: uppercase;
-      margin-bottom: 20px;
+
+      margin-bottom: 21px;
     }
+
 
     .hero-kicker::before {
       content: "";
-      width: 34px;
+
+      width: 35px;
       height: 2px;
-      background: var(--blue);
+
+      background:
+        linear-gradient(
+          to right,
+          var(--blue),
+          var(--cyan)
+        );
     }
 
+
     h1 {
-      color: var(--navy);
-      font-size: clamp(52px, 6.2vw, 82px);
+      color: var(--navy-900);
+
+      font-size:
+        clamp(52px, 6.1vw, 80px);
+
       line-height: 0.99;
+
       letter-spacing: -3px;
+
       margin-bottom: 24px;
     }
 
+
     .degree {
-      color: #375e7d;
-      font-size: clamp(22px, 2vw, 28px);
+      color: #365e7c;
+
+      font-size:
+        clamp(21px, 2vw, 27px);
+
       font-weight: 500;
-      margin-bottom: 13px;
+
+      margin-bottom: 12px;
     }
+
 
     .hero-focus {
-      color: var(--navy-2);
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 25px;
+      color: var(--navy-800);
+
+      font-size: 17px;
+
+      font-weight: 750;
+
+      margin-bottom: 24px;
     }
 
+
     .hero-intro {
-      max-width: 760px;
+      max-width: 740px;
+
       color: var(--text);
-      font-size: 16.5px;
+
+      font-size: 16px;
+
       line-height: 1.85;
+
       margin-bottom: 27px;
     }
 
+
     .hero-tags {
       display: flex;
+
       flex-wrap: wrap;
-      gap: 9px;
-      margin-bottom: 34px;
+
+      gap: 8px;
+
+      margin-bottom: 33px;
     }
 
+
     .hero-tag {
-      border: 1px solid #cbdce7;
-      background: rgba(255,255,255,0.72);
-      padding: 7px 11px;
+      padding:
+        7px 11px;
+
+      border:
+        1px solid #cadde8;
+
       border-radius: 4px;
+
+      background:
+        rgba(255,255,255,0.78);
+
       color: #31536d;
-      font-size: 12px;
+
+      font-size: 11.5px;
+
       font-weight: 700;
+
+      box-shadow:
+        0 4px 12px rgba(7,31,51,0.025);
     }
+
+
+
+    /* ==========================================================
+       BUTTONS
+       ========================================================== */
 
     .buttons {
       display: flex;
+
       flex-wrap: wrap;
-      gap: 12px;
+
+      align-items: stretch;
+
+      gap: 11px;
     }
 
+
     .btn {
-      text-decoration: none;
-      padding: 13px 21px;
+      min-height: 47px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding:
+        12px 20px;
+
       border-radius: 5px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: 0.2s ease;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-weight: 750;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
     }
+
 
     .btn-primary {
       color: white;
-      background: var(--blue);
-      border: 1px solid var(--blue);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          #0969b8
+        );
+
+      border:
+        1px solid var(--blue);
+
+      box-shadow:
+        0 8px 22px rgba(8,119,209,0.18);
     }
+
 
     .btn-primary:hover {
-      background: #0565b3;
-      border-color: #0565b3;
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 12px 26px rgba(8,119,209,0.25);
     }
+
 
     .btn-secondary {
-      background: rgba(255,255,255,0.8);
-      border: 1px solid #b9cddd;
-      color: var(--navy);
+      color: var(--navy-900);
+
+      background:
+        rgba(255,255,255,0.84);
+
+      border:
+        1px solid #bcd0dd;
     }
+
 
     .btn-secondary:hover {
-      border-color: var(--blue);
       color: var(--blue);
-      transform: translateY(-2px);
+
+      border-color: var(--blue);
+
+      background: white;
+
+      transform:
+        translateY(-2px);
     }
 
-    /* =========================
+
+
+    /* ==========================================================
+       CV DROPDOWN
+       ========================================================== */
+
+    .cv-dropdown {
+      position: relative;
+
+      display: inline-flex;
+    }
+
+
+    .cv-button {
+      gap: 8px;
+    }
+
+
+    .cv-arrow {
+      display: inline-block;
+
+      font-size: 15px;
+
+      transition:
+        transform 0.22s ease;
+    }
+
+
+    .cv-menu {
+      position: absolute;
+
+      top: calc(100% + 10px);
+
+      left: 0;
+
+      width: 245px;
+
+      padding: 7px;
+
+      background:
+        rgba(255,255,255,0.98);
+
+      border:
+        1px solid #d8e5ed;
+
+      border-radius: 8px;
+
+      box-shadow:
+        0 20px 50px rgba(7,31,51,0.16);
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transform:
+        translateY(-6px);
+
+      transition:
+        opacity 0.18s ease,
+        visibility 0.18s ease,
+        transform 0.18s ease;
+
+      z-index: 200;
+    }
+
+
+    .cv-dropdown:hover .cv-menu,
+    .cv-dropdown:focus-within .cv-menu {
+      opacity: 1;
+
+      visibility: visible;
+
+      transform:
+        translateY(0);
+    }
+
+
+    .cv-dropdown:hover .cv-arrow,
+    .cv-dropdown:focus-within .cv-arrow {
+      transform:
+        rotate(180deg);
+    }
+
+
+    .cv-menu a {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      padding: 11px;
+
+      border-radius: 6px;
+
+      text-decoration: none;
+
+      transition:
+        background 0.18s ease;
+    }
+
+
+    .cv-menu a:hover {
+      background: #eef6fa;
+    }
+
+
+    .cv-lang {
+      width: 35px;
+      height: 35px;
+
+      flex:
+        0 0 35px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        var(--blue-soft);
+
+      color:
+        var(--blue);
+
+      font-size: 10px;
+
+      font-weight: 850;
+
+      letter-spacing: 0.5px;
+    }
+
+
+    .cv-menu strong {
+      display: block;
+
+      color: var(--navy-900);
+
+      font-size: 13px;
+
+      line-height: 1.25;
+    }
+
+
+    .cv-menu small {
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+      margin-top: 2px;
+    }
+
+
+
+    /* ==========================================================
        PORTRAIT
-       ========================= */
+       ========================================================== */
 
     .portrait-zone {
       display: flex;
+
       justify-content: center;
+
       position: relative;
     }
 
+
     .portrait-card {
-      width: 315px;
-      padding: 35px 28px 30px;
-      background: rgba(238,245,248,0.78);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.8);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      text-align: center;
       position: relative;
+
+      width: 320px;
+
+      padding:
+        37px 29px 30px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.90),
+          rgba(235,244,248,0.82)
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.95);
+
+      border-radius: 13px;
+
+      backdrop-filter:
+        blur(12px);
+
+      -webkit-backdrop-filter:
+        blur(12px);
+
+      box-shadow:
+        0 28px 65px rgba(7,31,51,0.13);
     }
+
 
     .portrait-card::before {
       content: "";
+
       position: absolute;
-      width: 86px;
-      height: 86px;
-      border-top: 1px solid rgba(8,119,209,0.35);
-      border-left: 1px solid rgba(8,119,209,0.35);
-      top: -15px;
+
+      width: 90px;
+      height: 90px;
+
       left: -15px;
+      top: -15px;
+
+      border-left:
+        1px solid rgba(8,119,209,0.33);
+
+      border-top:
+        1px solid rgba(8,119,209,0.33);
     }
+
 
     .portrait-card::after {
       content: "";
+
       position: absolute;
-      width: 86px;
-      height: 86px;
-      border-right: 1px solid rgba(72,183,201,0.35);
-      border-bottom: 1px solid rgba(72,183,201,0.35);
-      bottom: -15px;
+
+      width: 90px;
+      height: 90px;
+
       right: -15px;
+      bottom: -15px;
+
+      border-right:
+        1px solid rgba(72,183,201,0.35);
+
+      border-bottom:
+        1px solid rgba(72,183,201,0.35);
     }
+
 
     .profile-photo {
       width: 190px;
       height: 190px;
+
       object-fit: cover;
-      object-position: center top;
+
+      object-position:
+        center top;
+
       border-radius: 50%;
-      border: 6px solid white;
-      box-shadow: 0 15px 35px rgba(11,39,66,0.18);
-      margin-bottom: 21px;
-    }
 
-    .portrait-card h3 {
-      color: var(--navy);
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
+      border:
+        6px solid white;
 
-    .portrait-role {
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 7px;
-    }
+      box-shadow:
+        0 16px 38px rgba(7,31,51,0.17);
 
-    .portrait-location {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .coordinates {
-      margin-top: 19px;
-      padding-top: 15px;
-      border-top: 1px solid rgba(120,144,164,0.25);
-      font-family: monospace;
-      color: #7791a5;
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-
-    /* =========================
-       GENERAL SECTIONS
-       ========================= */
-
-    .section {
-      padding: 95px 0;
-    }
-
-    .section-soft {
-      background: var(--soft);
-    }
-
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 50px;
-    }
-
-    .section-label {
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      color: var(--navy);
-      font-size: clamp(31px, 4vw, 46px);
-      line-height: 1.15;
-      margin-bottom: 16px;
-      letter-spacing: -1.2px;
-    }
-
-    .section-description {
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    /* =========================
-       PROFILE
-       ========================= */
-
-    .profile-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-    }
-
-    .profile-box {
-      padding: 34px;
-      border: 1px solid var(--line);
-      background: white;
-      border-radius: 8px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .profile-box::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: var(--blue);
-    }
-
-    .profile-box:nth-child(2)::before {
-      background: var(--cyan);
-    }
-
-    .profile-number {
-      color: #b7c9d6;
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    .profile-box h3 {
-      color: var(--navy);
-      font-size: 22px;
-      margin-bottom: 14px;
-    }
-
-    .profile-box p {
-      color: var(--text);
-      font-size: 15px;
-    }
-
-    /* =========================
-       EXPERTISE
-       ========================= */
-
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .expertise-card {
-      min-height: 205px;
-      padding: 28px;
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      transition: 0.25s ease;
-    }
-
-    .expertise-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 35px rgba(11,39,66,0.08);
-      border-color: #b8d6e8;
-    }
-
-    .expertise-icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      background: #eaf5fb;
-      color: var(--blue);
-      border-radius: 50%;
-      font-weight: 800;
-      margin-bottom: 19px;
-    }
-
-    .expertise-card h3 {
-      color: var(--navy);
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .expertise-card p {
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    /* =========================
-       EXPERIENCE
-       ========================= */
-
-    .experience-main {
-      display: grid;
-      grid-template-columns: 230px 1fr;
-      gap: 45px;
-      padding: 36px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .experience-main:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .experience-date {
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .experience-content h3 {
-      color: var(--navy);
-      font-size: 22px;
-      margin-bottom: 3px;
-    }
-
-    .experience-organisation {
-      color: #59758b;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 13px;
-    }
-
-    .experience-content p {
-      color: var(--text);
-      font-size: 15px;
-      max-width: 800px;
-    }
-
-    /* =========================
-       RESEARCH
-       ========================= */
-
-    .research-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 55px;
-      align-items: start;
-    }
-
-    .research-focus {
-      background: var(--navy);
-      color: white;
-      padding: 38px;
-      border-radius: 8px;
-      position: sticky;
-      top: 110px;
-    }
-
-    .research-focus .section-label {
-      color: #75c7ef;
-    }
-
-    .research-focus h3 {
-      font-size: 27px;
-      line-height: 1.25;
       margin-bottom: 20px;
     }
 
-    .research-focus p {
-      color: #c9d8e4;
-      font-size: 14px;
-      line-height: 1.8;
-      margin-bottom: 24px;
-    }
 
-    .research-keywords {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .portrait-card h3 {
+      color: var(--navy-900);
 
-    .research-keywords span {
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 6px 9px;
-      border-radius: 4px;
-      font-size: 11px;
-      color: #d9e7f0;
-    }
-
-    .publication {
-      padding: 0 0 27px;
-      margin-bottom: 27px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .publication-type {
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .publication h4 {
-      color: var(--navy);
       font-size: 18px;
-      line-height: 1.45;
-      margin-bottom: 8px;
-    }
 
-    .publication p {
-      color: var(--text);
-      font-size: 13px;
-    }
-
-    /* =========================
-       EDUCATION / TEACHING
-       ========================= */
-
-    .two-column {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 55px;
-    }
-
-    .subsection-title {
-      color: var(--navy);
-      font-size: 25px;
-      margin-bottom: 27px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 24px;
-      margin-bottom: 27px;
-      border-left: 2px solid #d7e6ef;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--blue);
-      left: -5px;
-      top: 8px;
-    }
-
-    .timeline-item h4 {
-      color: var(--navy);
-      font-size: 16px;
       margin-bottom: 4px;
     }
 
+
+    .portrait-role {
+      color: var(--blue);
+
+      font-size: 12px;
+
+      font-weight: 750;
+
+      margin-bottom: 7px;
+    }
+
+
+    .portrait-location {
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+
+    .coordinates {
+      margin-top: 19px;
+
+      padding-top: 15px;
+
+      border-top:
+        1px solid rgba(120,144,164,0.24);
+
+      color: #7891a4;
+
+      font-family:
+        "Courier New",
+        monospace;
+
+      font-size: 9px;
+
+      letter-spacing: 1.3px;
+    }
+
+
+
+    /* ==========================================================
+       GENERAL SECTIONS
+       ========================================================== */
+
+    .section {
+      padding:
+        98px 0;
+    }
+
+
+    .section-soft {
+      background:
+        linear-gradient(
+          180deg,
+          #f6f9fb 0%,
+          #f2f7f9 100%
+        );
+    }
+
+
+    .section-heading {
+      max-width: 780px;
+
+      margin-bottom: 52px;
+    }
+
+
+    .section-label {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--blue);
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-size: 11px;
+
+      font-weight: 850;
+
+      margin-bottom: 11px;
+    }
+
+
+    .section-label::before {
+      content: "";
+
+      width: 22px;
+      height: 1px;
+
+      background: currentColor;
+    }
+
+
+    .section-title {
+      color: var(--navy-900);
+
+      font-size:
+        clamp(31px, 4vw, 45px);
+
+      line-height: 1.14;
+
+      letter-spacing: -1.2px;
+
+      margin-bottom: 16px;
+    }
+
+
+    .section-description {
+      color: var(--text);
+
+      font-size: 15.5px;
+
+      line-height: 1.85;
+    }
+
+
+
+    /* ==========================================================
+       PROFILE
+       ========================================================== */
+
+    .profile-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+
+    .profile-box {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 35px;
+
+      background: white;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: var(--radius);
+
+      box-shadow:
+        0 7px 24px rgba(7,31,51,0.035);
+    }
+
+
+    .profile-box::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+      bottom: 0;
+
+      width: 4px;
+
+      background:
+        linear-gradient(
+          var(--blue),
+          var(--cyan)
+        );
+    }
+
+
+    .profile-number {
+      color: #a9bdcb;
+
+      font-size: 11px;
+
+      font-weight: 850;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 17px;
+    }
+
+
+    .profile-box h3 {
+      color: var(--navy-900);
+
+      font-size: 21px;
+
+      margin-bottom: 13px;
+    }
+
+
+    .profile-box p {
+      color: var(--text);
+
+      font-size: 14.5px;
+
+      line-height: 1.8;
+    }
+
+
+
+    /* ==========================================================
+       EXPERTISE
+       ========================================================== */
+
+    .expertise-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+
+    .expertise-card {
+      position: relative;
+
+      min-height: 210px;
+
+      padding: 29px;
+
+      background:
+        rgba(255,255,255,0.92);
+
+      border:
+        1px solid var(--line);
+
+      border-radius: 9px;
+
+      overflow: hidden;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+
+    .expertise-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 90px;
+      height: 90px;
+
+      right: -45px;
+      bottom: -45px;
+
+      border:
+        1px solid rgba(8,119,209,0.08);
+
+      border-radius: 50%;
+    }
+
+
+    .expertise-card:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        #b7d5e6;
+
+      box-shadow:
+        var(--shadow-small);
+    }
+
+
+    .expertise-icon {
+      width: 41px;
+      height: 41px;
+
+      display: grid;
+
+      place-items: center;
+
+      margin-bottom: 19px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          145deg,
+          #e5f3fb,
+          #edf8f8
+        );
+
+      color: var(--blue);
+
+      font-size: 11px;
+
+      font-weight: 850;
+    }
+
+
+    .expertise-card h3 {
+      color: var(--navy-900);
+
+      font-size: 17px;
+
+      margin-bottom: 10px;
+    }
+
+
+    .expertise-card p {
+      color: var(--text);
+
+      font-size: 13.5px;
+
+      line-height: 1.75;
+    }
+
+
+
+    /* ==========================================================
+       EXPERIENCE
+       ========================================================== */
+
+    .experience-main {
+      display: grid;
+
+      grid-template-columns:
+        210px 1fr;
+
+      gap: 45px;
+
+      padding:
+        37px 0;
+
+      border-top:
+        1px solid var(--line);
+    }
+
+
+    .experience-main:last-child {
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+    .experience-date {
+      color: var(--blue);
+
+      font-size: 11px;
+
+      font-weight: 850;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.3px;
+
+      padding-top: 5px;
+    }
+
+
+    .experience-content h3 {
+      color: var(--navy-900);
+
+      font-size: 21px;
+
+      margin-bottom: 3px;
+    }
+
+
+    .experience-organisation {
+      color: #5d788d;
+
+      font-size: 13px;
+
+      font-weight: 750;
+
+      margin-bottom: 13px;
+    }
+
+
+    .experience-content p {
+      max-width: 820px;
+
+      color: var(--text);
+
+      font-size: 14.5px;
+
+      line-height: 1.8;
+    }
+
+
+
+    /* ==========================================================
+       RESEARCH
+       ========================================================== */
+
+    .research-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.86fr 1.14fr;
+
+      gap: 58px;
+
+      align-items: start;
+    }
+
+
+    .research-focus {
+      position: sticky;
+
+      top: 108px;
+
+      overflow: hidden;
+
+      padding: 39px;
+
+      color: white;
+
+      border-radius: 10px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #09243a 0%,
+          #0c314d 65%,
+          #0b3d58 100%
+        );
+
+      box-shadow:
+        0 25px 55px rgba(7,31,51,0.14);
+    }
+
+
+    .research-focus::before {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      right: -190px;
+      top: -170px;
+
+      border:
+        1px solid rgba(255,255,255,0.09);
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 45px rgba(255,255,255,0.018),
+        0 0 0 90px rgba(255,255,255,0.012);
+    }
+
+
+    .research-focus .section-label {
+      color: #72c6ee;
+    }
+
+
+    .research-focus h3 {
+      position: relative;
+
+      font-size: 26px;
+
+      line-height: 1.3;
+
+      margin-bottom: 19px;
+    }
+
+
+    .research-focus p {
+      position: relative;
+
+      color: #c6d7e3;
+
+      font-size: 13.5px;
+
+      line-height: 1.8;
+
+      margin-bottom: 24px;
+    }
+
+
+    .research-keywords {
+      position: relative;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+    }
+
+
+    .research-keywords span {
+      padding:
+        6px 9px;
+
+      border:
+        1px solid rgba(255,255,255,0.17);
+
+      border-radius: 4px;
+
+      color: #dce8ef;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      font-size: 10.5px;
+    }
+
+
+
+    /* ORCID */
+
+    .research-identity {
+      position: relative;
+
+      margin-top: 27px;
+
+      padding-top: 21px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.13);
+    }
+
+
+    .orcid-link {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      text-decoration: none;
+    }
+
+
+    .orcid-icon {
+      width: 38px;
+      height: 38px;
+
+      flex:
+        0 0 38px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        var(--green-orcid);
+
+      color: white;
+
+      font-size: 13px;
+
+      font-weight: 850;
+
+      box-shadow:
+        0 7px 18px rgba(166,206,57,0.17);
+    }
+
+
+    .orcid-link small {
+      display: block;
+
+      color: #8faabd;
+
+      font-size: 9px;
+
+      font-weight: 750;
+
+      letter-spacing: 1.4px;
+
+      margin-bottom: 1px;
+    }
+
+
+    .orcid-link strong {
+      display: block;
+
+      color: white;
+
+      font-size: 12px;
+
+      font-weight: 650;
+
+      transition:
+        color 0.18s ease;
+    }
+
+
+    .orcid-link:hover strong {
+      color: #76c8ee;
+    }
+
+
+
+    /* PUBLICATIONS */
+
+    .publication {
+      position: relative;
+
+      padding:
+        0 0 28px;
+
+      margin-bottom: 28px;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+    .publication:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .publication-type {
+      color: var(--blue);
+
+      font-size: 10px;
+
+      font-weight: 850;
+
+      letter-spacing: 1.4px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
+    }
+
+
+    .publication h4 {
+      color: var(--navy-900);
+
+      font-size: 18px;
+
+      line-height: 1.45;
+
+      margin-bottom: 9px;
+    }
+
+
+    .publication p {
+      color: var(--text);
+
+      font-size: 12.5px;
+
+      line-height: 1.7;
+    }
+
+
+    .publication-authors {
+      color: #526f84 !important;
+
+      font-weight: 600;
+    }
+
+
+    .publication-journal {
+      color: #7a91a2 !important;
+
+      margin-top: 3px;
+    }
+
+
+    .publication-links {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 13px;
+    }
+
+
+    .doi-button {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      padding:
+        7px 11px;
+
+      color: var(--blue);
+
+      background: white;
+
+      border:
+        1px solid #c7dce8;
+
+      border-radius: 4px;
+
+      text-decoration: none;
+
+      font-size: 10.5px;
+
+      font-weight: 750;
+
+      transition:
+        0.2s ease;
+    }
+
+
+    .doi-button::before {
+      content: "↗";
+
+      font-size: 11px;
+    }
+
+
+    .doi-button:hover {
+      color: white;
+
+      background: var(--blue);
+
+      border-color: var(--blue);
+
+      transform:
+        translateY(-1px);
+    }
+
+
+
+    /* ==========================================================
+       EDUCATION
+       ========================================================== */
+
+    .two-column {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 60px;
+    }
+
+
+    .subsection-title {
+      color: var(--navy-900);
+
+      font-size: 24px;
+
+      margin-bottom: 28px;
+    }
+
+
+    .timeline-item {
+      position: relative;
+
+      padding-left: 25px;
+
+      margin-bottom: 27px;
+
+      border-left:
+        2px solid #d6e5ed;
+    }
+
+
+    .timeline-item::before {
+      content: "";
+
+      position: absolute;
+
+      width: 8px;
+      height: 8px;
+
+      left: -5px;
+      top: 8px;
+
+      border-radius: 50%;
+
+      background: var(--blue);
+
+      box-shadow:
+        0 0 0 4px rgba(8,119,209,0.07);
+    }
+
+
+    .timeline-item h4 {
+      color: var(--navy-900);
+
+      font-size: 15px;
+
+      margin-bottom: 4px;
+    }
+
+
     .timeline-item .institution {
       color: var(--text);
-      font-size: 13px;
+
+      font-size: 12.5px;
+
       margin-bottom: 5px;
     }
 
+
     .timeline-item .date {
       color: var(--blue);
-      font-size: 12px;
-      font-weight: 700;
+
+      font-size: 11px;
+
+      font-weight: 750;
     }
 
-    /* =========================
+
+
+    /* ==========================================================
        CONTACT
-       ========================= */
+       ========================================================== */
 
     .contact {
-      background: var(--navy);
+      position: relative;
+
+      overflow: hidden;
+
       color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #071d30 0%,
+          #092b44 58%,
+          #0b3853 100%
+        );
     }
 
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 50px;
-      align-items: center;
+
+    .contact::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -240px;
+      top: -300px;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 70px rgba(255,255,255,0.014),
+        0 0 0 140px rgba(255,255,255,0.010);
     }
+
+
+    .contact .container {
+      position: relative;
+
+      z-index: 2;
+    }
+
 
     .contact .section-label {
-      color: #6fc4ef;
+      color: #72c7ef;
     }
 
-    .contact h2 {
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 1.15;
-      margin-bottom: 14px;
+
+    .contact-links {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
+
+      margin-top: 35px;
     }
 
-    .contact p {
-      color: #c4d5e1;
-      max-width: 690px;
+
+    .contact-card {
+      min-height: 125px;
+
+      padding: 24px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      background:
+        rgba(255,255,255,0.045);
+
+      border:
+        1px solid rgba(255,255,255,0.14);
+
+      border-radius: 8px;
+
+      text-decoration: none;
+
+      backdrop-filter:
+        blur(8px);
+
+      transition:
+        0.23s ease;
     }
 
-    .contact .btn-secondary {
+
+    a.contact-card:hover {
+      transform:
+        translateY(-4px);
+
+      background:
+        rgba(255,255,255,0.08);
+
+      border-color:
+        rgba(111,196,239,0.55);
+    }
+
+
+    .contact-small {
+      color: #72c7ef;
+
+      font-size: 9px;
+
+      font-weight: 850;
+
+      letter-spacing: 1.7px;
+
+      margin-bottom: 7px;
+    }
+
+
+    .contact-card strong {
       color: white;
-      border-color: rgba(255,255,255,0.4);
-      background: transparent;
+
+      font-size: 13px;
+
+      font-weight: 650;
+
+      word-break: break-word;
     }
 
-    .contact .btn-secondary:hover {
-      border-color: white;
-      color: white;
-    }
+
+
+    /* ==========================================================
+       FOOTER
+       ========================================================== */
 
     footer {
-      background: #071d30;
-      color: #8fa8ba;
-      padding: 25px 0;
-      font-size: 12px;
+      padding:
+        25px 0;
+
+      background:
+        #051724;
+
+      color:
+        #829bac;
+
+      border-top:
+        1px solid rgba(255,255,255,0.05);
+
+      font-size: 11px;
     }
+
 
     .footer-inner {
       display: flex;
+
       justify-content: space-between;
+
       gap: 20px;
     }
 
-    /* =========================
-       RESPONSIVE
-       ========================= */
 
-    @media (max-width: 960px) {
+
+    /* ==========================================================
+       RESPONSIVE
+       ========================================================== */
+
+    @media (max-width: 1000px) {
+
       .nav-links {
         display: none;
       }
 
+
       .hero {
-        background: linear-gradient(#ffffff, #f3f8fb);
+        min-height: auto;
+
+        background:
+          linear-gradient(
+            180deg,
+            #ffffff,
+            #f1f7fa
+          );
       }
+
 
       .hero-inner {
         grid-template-columns: 1fr;
+
         gap: 55px;
       }
+
 
       .portrait-zone {
         justify-content: flex-start;
       }
+
 
       .profile-grid,
       .two-column {
         grid-template-columns: 1fr;
       }
 
+
       .expertise-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
+
 
       .research-grid {
         grid-template-columns: 1fr;
       }
 
+
       .research-focus {
         position: static;
       }
 
+
       .experience-main {
         grid-template-columns: 1fr;
+
         gap: 10px;
       }
 
-      .contact-inner {
-        grid-template-columns: 1fr;
+
+      .contact-links {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
+
+
+      .geo-grid {
+        opacity: 0.45;
+      }
+
     }
 
-    @media (max-width: 650px) {
+
+
+    @media (max-width: 680px) {
+
       .container,
       nav,
       .hero-inner {
-        width: min(100% - 32px, 1180px);
+        width:
+          min(100% - 32px, 1180px);
       }
 
+
       h1 {
-        font-size: 52px;
+        font-size: 50px;
+
         letter-spacing: -2px;
       }
 
-      .hero {
-        min-height: auto;
-      }
 
       .hero-inner {
-        padding: 58px 0 70px;
+        padding:
+          58px 0 70px;
       }
+
+
+      .hero-focus {
+        font-size: 15px;
+      }
+
+
+      .buttons {
+        align-items: stretch;
+      }
+
+
+      .btn,
+      .cv-dropdown {
+        width: 100%;
+      }
+
+
+      .cv-button {
+        width: 100%;
+      }
+
+
+      .cv-menu {
+        width: 100%;
+      }
+
 
       .expertise-grid {
         grid-template-columns: 1fr;
       }
 
+
       .portrait-card {
         width: 100%;
+
         max-width: 330px;
       }
 
-      .section {
-        padding: 70px 0;
+
+      .contact-links {
+        grid-template-columns: 1fr;
       }
+
+
+      .section {
+        padding:
+          72px 0;
+      }
+
 
       .footer-inner {
         flex-direction: column;
       }
+
+
+      .topo-map {
+        opacity: 0.30;
+
+        right: -350px;
+      }
+
     }
 
+
+
     @media (prefers-reduced-motion: reduce) {
+
       *,
       *::before,
       *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
+
+        animation-duration:
+          0.01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        scroll-behavior:
+          auto !important;
+
       }
+
     }
+
   </style>
+
 </head>
+
+
 
 <body>
 
-  <!-- NAVIGATION -->
+
+  <!-- ========================================================
+       NAVIGATION
+       ======================================================== -->
+
   <header>
+
     <nav>
-      <a href="#home" class="brand">Badr KHALLOUQ</a>
+
+      <a href="#home" class="brand">
+
+        <span class="brand-mark">
+          BK
+        </span>
+
+        <span>
+          Badr KHALLOUQ
+        </span>
+
+      </a>
+
 
       <ul class="nav-links">
-        <li><a href="#profile">Profile</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+        <li>
+          <a href="#profile">
+            Profile
+          </a>
+        </li>
+
+        <li>
+          <a href="#expertise">
+            Expertise
+          </a>
+        </li>
+
+        <li>
+          <a href="#experience">
+            Experience
+          </a>
+        </li>
+
+        <li>
+          <a href="#research">
+            Research
+          </a>
+        </li>
+
+        <li>
+          <a href="#education">
+            Education
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            Contact
+          </a>
+        </li>
+
       </ul>
+
     </nav>
+
   </header>
 
 
-  <!-- HERO -->
+
+  <!-- ========================================================
+       HERO
+       ======================================================== -->
+
   <main id="home" class="hero">
 
+
+    <!-- PROFESSIONAL GEOSPATIAL BACKGROUND -->
+
     <div class="geo-background">
+
+
       <div class="geo-grid"></div>
 
-      <div class="contour c1"></div>
-      <div class="contour c2"></div>
-      <div class="contour c3"></div>
-      <div class="contour c4"></div>
+
+      <div class="topo-map">
+
+        <div class="contour c1"></div>
+        <div class="contour c2"></div>
+        <div class="contour c3"></div>
+        <div class="contour c4"></div>
+        <div class="contour c5"></div>
+
+      </div>
+
+
+      <div class="parcel p1"></div>
+      <div class="parcel p2"></div>
+      <div class="parcel p3"></div>
+
 
       <div class="territorial-line l1"></div>
       <div class="territorial-line l2"></div>
       <div class="territorial-line l3"></div>
 
+
       <div class="geo-node n1"></div>
       <div class="geo-node n2"></div>
       <div class="geo-node n3"></div>
       <div class="geo-node n4"></div>
+
+
+      <div class="map-coordinate coord-1">
+        GEOSPATIAL REFERENCE
+      </div>
+
+      <div class="map-coordinate coord-2">
+        TERRITORIAL ANALYSIS
+      </div>
+
+
     </div>
+
+
 
     <div class="hero-inner">
 
+
+      <!-- HERO TEXT -->
+
       <div>
+
+
         <div class="hero-kicker">
           Territories · Land · Geospatial Intelligence
         </div>
+
 
         <h1>
           Dr. Badr<br>
           KHALLOUQ
         </h1>
 
+
         <div class="degree">
           State Engineer · PhD in Geography
         </div>
+
 
         <div class="hero-focus">
           Territorial Dynamics · Land Governance · Geospatial Technologies
         </div>
 
+
         <p class="hero-intro">
-          State Engineer and PhD in Geography with over twelve years of
-          experience at the intersection of territorial analysis, geographic
-          information, land governance and spatial decision support.
-          My work combines professional engineering practice, field-based
-          territorial knowledge, scientific research and advanced geospatial
-          technologies.
+
+          State Engineer and PhD in Geography with over twelve years
+          of experience at the intersection of territorial analysis,
+          geographic information, land governance and spatial
+          decision support.
+
+          My work combines professional engineering practice,
+          field-based territorial knowledge, scientific research
+          and advanced geospatial technologies.
+
         </p>
 
+
+
         <div class="hero-tags">
-          <span class="hero-tag">GIS & Spatial Analysis</span>
-          <span class="hero-tag">GeoAI</span>
-          <span class="hero-tag">Land Governance</span>
-          <span class="hero-tag">Cadastre</span>
-          <span class="hero-tag">Territorial Planning</span>
-          <span class="hero-tag">Remote Sensing</span>
-          <span class="hero-tag">Real Estate Valuation</span>
+
+          <span class="hero-tag">
+            GIS & Spatial Analysis
+          </span>
+
+          <span class="hero-tag">
+            GeoAI
+          </span>
+
+          <span class="hero-tag">
+            Land Governance
+          </span>
+
+          <span class="hero-tag">
+            Cadastre
+          </span>
+
+          <span class="hero-tag">
+            Territorial Planning
+          </span>
+
+          <span class="hero-tag">
+            Remote Sensing
+          </span>
+
+          <span class="hero-tag">
+            Real Estate Valuation
+          </span>
+
         </div>
 
+
+
+        <!-- HERO BUTTONS -->
+
         <div class="buttons">
+
+
+          <!-- LINKEDIN -->
+
           <a
             href="https://www.linkedin.com/in/dr-badr-khallouq-18aa323bb"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-primary">
+
             LinkedIn
-            <a
-  href="Badr_KHALLOUQ_CV_EN.pdf"
-  target="_blank"
-  class="btn btn-secondary">
-  CV · English
-</a>
 
-<a
-  href="Badr_KHALLOUQ_CV_FR.pdf"
-  target="_blank"
-  class="btn btn-secondary">
-  CV · Français
-</a>
           </a>
 
-          <a href="#research" class="btn btn-secondary">
+
+
+          <!-- CV DROPDOWN -->
+
+          <div class="cv-dropdown">
+
+
+            <button
+              type="button"
+              class="btn btn-secondary cv-button"
+              aria-haspopup="true">
+
+              Download CV
+
+              <span class="cv-arrow">
+                ⌄
+              </span>
+
+            </button>
+
+
+
+            <div class="cv-menu">
+
+
+              <a
+                href="Badr_KHALLOUQ_CV_ENGLISH.pdf"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <span class="cv-lang">
+                  EN
+                </span>
+
+                <span>
+
+                  <strong>
+                    English
+                  </strong>
+
+                  <small>
+                    Curriculum Vitae
+                  </small>
+
+                </span>
+
+              </a>
+
+
+
+              <a
+                href="Badr_KHALLOUQ_CV_FRENCH.pdf"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <span class="cv-lang">
+                  FR
+                </span>
+
+                <span>
+
+                  <strong>
+                    Français
+                  </strong>
+
+                  <small>
+                    Curriculum Vitae
+                  </small>
+
+                </span>
+
+              </a>
+
+
+            </div>
+
+          </div>
+
+
+
+          <a
+            href="#research"
+            class="btn btn-secondary">
+
             Research & Publications
+
           </a>
 
-          <a href="#profile" class="btn btn-secondary">
+
+
+          <a
+            href="#profile"
+            class="btn btn-secondary">
+
             Explore Profile
+
           </a>
+
+
         </div>
+
+
       </div>
 
 
+
+      <!-- PORTRAIT -->
+
       <div class="portrait-zone">
+
         <div class="portrait-card">
+
 
           <img
             src="badr-khallouq.png"
             alt="Portrait of Dr. Badr KHALLOUQ"
             class="profile-photo">
 
-          <h3>Dr. Badr KHALLOUQ</h3>
+
+          <h3>
+            Dr. Badr KHALLOUQ
+          </h3>
+
 
           <div class="portrait-role">
             Engineer · Researcher
           </div>
 
+
           <div class="portrait-location">
             Rabat, Morocco
           </div>
+
 
           <div class="coordinates">
             TERRITORIAL · GEOSPATIAL · LAND
           </div>
 
+
         </div>
+
       </div>
 
+
     </div>
+
   </main>
 
 
-  <!-- PROFILE -->
-  <section id="profile" class="section">
+
+  <!-- ========================================================
+       PROFILE
+       ======================================================== -->
+
+  <section
+    id="profile"
+    class="section">
+
     <div class="container">
 
+
       <div class="section-heading">
-        <div class="section-label">Professional Profile</div>
+
+
+        <div class="section-label">
+          Professional Profile
+        </div>
+
+
         <h2 class="section-title">
           Engineering practice meets territorial research
         </h2>
 
+
         <p class="section-description">
-          A multidisciplinary profile combining territorial engineering,
-          geographic knowledge, land governance, geospatial sciences and
-          applied research.
+
+          A multidisciplinary profile combining territorial
+          engineering, geographic knowledge, land governance,
+          geospatial sciences and applied research.
+
         </p>
+
+
       </div>
+
+
 
       <div class="profile-grid">
 
-        <article class="profile-box">
-          <div class="profile-number">01 / ENGINEERING</div>
 
-          <h3>Engineering & Professional Practice</h3>
+        <article class="profile-box">
+
+
+          <div class="profile-number">
+            01 / ENGINEERING
+          </div>
+
+
+          <h3>
+            Engineering & Professional Practice
+          </h3>
+
 
           <p>
-            State Engineer in Urban Planning and Territorial Development with
-            more than twelve years of professional experience. Since 2013,
-            professional practice has included national cartographic operations,
-            territorial and spatial analysis, geographic data production and
-            validation, field investigations, geographic reference systems and
+
+            State Engineer in Urban Planning and Territorial
+            Development with more than twelve years of professional
+            experience.
+
+            Since 2013, professional practice has included national
+            cartographic operations, territorial and spatial analysis,
+            geographic data production and validation, field
+            investigations, geographic reference systems and
             geospatial decision support.
+
           </p>
+
+
         </article>
+
+
 
         <article class="profile-box">
-          <div class="profile-number">02 / RESEARCH</div>
 
-          <h3>Academic & Research Profile</h3>
+
+          <div class="profile-number">
+            02 / RESEARCH
+          </div>
+
+
+          <h3>
+            Academic & Research Profile
+          </h3>
+
 
           <p>
-            PhD in Geography with research focused on territorial governance
-            of agricultural collective lands in Morocco. Research interests
-            connect land governance, territorial dynamics, rural
-            transformations, public policy and geospatial approaches to
-            territorial decision support.
+
+            PhD in Geography with research focused on territorial
+            governance of agricultural collective lands in Morocco.
+
+            Research interests connect land governance, territorial
+            dynamics, rural transformations, public policy and
+            geospatial approaches to territorial decision support.
+
           </p>
+
+
         </article>
+
 
       </div>
+
+
     </div>
+
   </section>
 
 
-  <!-- EXPERTISE -->
-  <section id="expertise" class="section section-soft">
+
+  <!-- ========================================================
+       EXPERTISE
+       ======================================================== -->
+
+  <section
+    id="expertise"
+    class="section section-soft">
+
     <div class="container">
 
+
       <div class="section-heading">
-        <div class="section-label">Areas of Expertise</div>
+
+
+        <div class="section-label">
+          Areas of Expertise
+        </div>
+
 
         <h2 class="section-title">
           From geographic information to territorial decision-making
         </h2>
 
+
         <p class="section-description">
-          Expertise developed across professional engineering, applied
-          research, teaching and territorial fieldwork.
+
+          Expertise developed across professional engineering,
+          applied research, teaching and territorial fieldwork.
+
         </p>
+
+
       </div>
+
+
 
       <div class="expertise-grid">
 
+
         <article class="expertise-card">
-          <div class="expertise-icon">01</div>
-          <h3>GIS & Spatial Analysis</h3>
+
+          <div class="expertise-icon">
+            01
+          </div>
+
+          <h3>
+            GIS & Spatial Analysis
+          </h3>
+
           <p>
             QGIS, ArcGIS, spatial analysis, cartographic modelling,
             multi-criteria analysis, spatial statistics and spatial
             data management.
           </p>
+
         </article>
 
+
+
         <article class="expertise-card">
-          <div class="expertise-icon">02</div>
-          <h3>Remote Sensing</h3>
+
+          <div class="expertise-icon">
+            02
+          </div>
+
+          <h3>
+            Remote Sensing
+          </h3>
+
           <p>
-            Google Earth Engine, optical and radar imagery, land-use and
-            land-cover classification, change detection and time-series
-            analysis.
+            Google Earth Engine, optical and radar imagery,
+            land-use and land-cover classification, change detection
+            and time-series analysis.
           </p>
+
         </article>
 
+
+
         <article class="expertise-card">
-          <div class="expertise-icon">03</div>
-          <h3>GeoAI & Machine Learning</h3>
+
+          <div class="expertise-icon">
+            03
+          </div>
+
+          <h3>
+            GeoAI & Machine Learning
+          </h3>
+
           <p>
-            Random Forest, XGBoost, SVM and spatial predictive modelling,
-            including urban expansion simulation using SLEUTH, LCM and PLUS.
+            Random Forest, XGBoost, SVM and spatial predictive
+            modelling, including urban expansion simulation using
+            SLEUTH, LCM and PLUS.
           </p>
+
         </article>
 
+
+
         <article class="expertise-card">
-          <div class="expertise-icon">04</div>
-          <h3>Cartography & Geodesy</h3>
+
+          <div class="expertise-icon">
+            04
+          </div>
+
+          <h3>
+            Cartography & Geodesy
+          </h3>
+
           <p>
             Topographic mapping, GNSS, levelling, orthophotos,
-            photogrammetry, map production and geospatial quality control.
+            photogrammetry, map production and geospatial
+            quality control.
           </p>
+
         </article>
 
+
+
         <article class="expertise-card">
-          <div class="expertise-icon">05</div>
-          <h3>Land Governance & Cadastre</h3>
+
+          <div class="expertise-icon">
+            05
+          </div>
+
+          <h3>
+            Land Governance & Cadastre
+          </h3>
+
           <p>
             Land information systems, cadastre, collective lands,
             melkisation, land governance, land valuation and rural
             land management.
           </p>
+
         </article>
+
+
 
         <article class="expertise-card">
-          <div class="expertise-icon">06</div>
-          <h3>Territorial Planning</h3>
+
+          <div class="expertise-icon">
+            06
+          </div>
+
+          <h3>
+            Territorial Planning
+          </h3>
+
           <p>
-            Urban and territorial planning, land-use planning, territorial
-            development, spatial analysis and territorial decision-support
-            approaches.
+            Urban and territorial planning, land-use planning,
+            territorial development, spatial analysis and
+            territorial decision-support approaches.
           </p>
+
         </article>
 
+
       </div>
+
+
     </div>
+
   </section>
 
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section">
+
+  <!-- ========================================================
+       EXPERIENCE
+       ======================================================== -->
+
+  <section
+    id="experience"
+    class="section">
+
     <div class="container">
 
+
       <div class="section-heading">
-        <div class="section-label">Professional Experience</div>
+
+
+        <div class="section-label">
+          Professional Experience
+        </div>
+
 
         <h2 class="section-title">
           Territorial knowledge built through field and institutional practice
         </h2>
+
+
       </div>
 
 
+
+      <!-- ANCFCC -->
+
       <article class="experience-main">
+
 
         <div class="experience-date">
           2013 — Present
         </div>
 
+
         <div class="experience-content">
-          <h3>State Engineer</h3>
+
+
+          <h3>
+            State Engineer
+          </h3>
+
 
           <div class="experience-organisation">
-            National Land Conservation, Cadastre and Cartography Agency
-            (ANCFCC) · Department of Base Cartography
+
+            National Land Conservation, Cadastre and Cartography
+            Agency (ANCFCC) · Department of Base Cartography
+
           </div>
 
+
           <p>
-            Professional activities include field missions across nearly
-            90% of the Moroccan territory, territorial and cartographic
-            data collection and validation, national cartographic reference
-            data operations, analysis of spatial and territorial dynamics,
-            geographic reference systems and the development of geospatial
-            tools for field data collection and quality control.
+
+            Professional activities include field missions across
+            nearly 90% of the Moroccan territory, territorial and
+            cartographic data collection and validation, national
+            cartographic reference data operations, analysis of
+            spatial and territorial dynamics, geographic reference
+            systems and the development of geospatial tools for
+            field data collection and quality control.
+
           </p>
+
+
         </div>
+
 
       </article>
 
 
+
+      <!-- TEACHING -->
+
       <article class="experience-main">
+
 
         <div class="experience-date">
           2025 — 2026
         </div>
 
+
         <div class="experience-content">
-          <h3>Teaching & Academic Supervision</h3>
+
+
+          <h3>
+            Teaching & Academic Supervision
+          </h3>
+
 
           <div class="experience-organisation">
+
             Hassan II Agronomic and Veterinary Institute · Rabat
+
           </div>
 
+
           <p>
-            Teaching advanced GIS applied to territorial planning and
-            supervising Master's-level work in Geospatial Sciences and
-            Land Governance, including projects involving GeoAI,
-            Machine Learning, Google Earth Engine, remote sensing and
-            spatial predictive modelling.
+
+            Teaching advanced GIS applied to territorial planning
+            and supervising Master's-level work in Geospatial
+            Sciences and Land Governance, including projects
+            involving GeoAI, Machine Learning, Google Earth Engine,
+            remote sensing and spatial predictive modelling.
+
           </p>
+
+
         </div>
+
 
       </article>
 
 
+
+      <!-- CONSULTING -->
+
       <article class="experience-main">
+
 
         <div class="experience-date">
           Selected Activities
         </div>
 
+
         <div class="experience-content">
-          <h3>Consulting & Applied Expertise</h3>
+
+
+          <h3>
+            Consulting & Applied Expertise
+          </h3>
+
 
           <div class="experience-organisation">
-            Land · Environment · Territorial Studies · Real Estate Valuation
+
+            Land · Environment · Territorial Studies ·
+            Real Estate Valuation
+
           </div>
 
+
           <p>
-            Additional professional activities include agricultural land
-            prospecting and valuation, support for land and territorial
-            studies, environmental impact assessments, and real estate
-            valuation assignments involving land, residential, commercial,
-            industrial and logistics assets.
+
+            Additional professional activities include agricultural
+            land prospecting and valuation, support for land and
+            territorial studies, environmental impact assessments,
+            and real estate valuation assignments involving land,
+            residential, commercial, industrial and logistics assets.
+
           </p>
+
+
         </div>
+
 
       </article>
 
+
     </div>
+
   </section>
 
 
-  <!-- RESEARCH -->
-  <section id="research" class="section section-soft">
+
+  <!-- ========================================================
+       RESEARCH & PUBLICATIONS
+       ======================================================== -->
+
+  <section
+    id="research"
+    class="section section-soft">
+
     <div class="container">
 
+
       <div class="section-heading">
-        <div class="section-label">Research & Publications</div>
+
+
+        <div class="section-label">
+          Research & Publications
+        </div>
+
 
         <h2 class="section-title">
           Understanding territorial transformations through spatial evidence
         </h2>
+
+
+        <p class="section-description">
+
+          Research at the intersection of geography, land governance,
+          territorial dynamics and geospatial modelling.
+
+        </p>
+
+
       </div>
+
 
 
       <div class="research-grid">
 
+
+        <!-- RESEARCH PROFILE -->
+
         <aside class="research-focus">
 
-          <div class="section-label">Research Focus</div>
+
+          <div class="section-label">
+            Research Focus
+          </div>
+
 
           <h3>
             Land governance, territorial dynamics and geospatial decision support
           </h3>
 
+
           <p>
-            Research combines quantitative, qualitative, institutional and
-            geospatial approaches to analyse territorial transformations,
-            collective land policies and spatial decision-making.
+
+            Research combines quantitative, qualitative,
+            institutional and geospatial approaches to analyse
+            territorial transformations, collective land policies
+            and spatial decision-making.
+
           </p>
 
+
+
           <div class="research-keywords">
-            <span>Collective Lands</span>
-            <span>Land Governance</span>
-            <span>LGAF</span>
-            <span>Melkisation</span>
-            <span>Territorial Dynamics</span>
-            <span>GIS-AHP</span>
-            <span>Urban Sprawl</span>
-            <span>Spatial Modelling</span>
+
+            <span>
+              Collective Lands
+            </span>
+
+            <span>
+              Land Governance
+            </span>
+
+            <span>
+              LGAF
+            </span>
+
+            <span>
+              Melkisation
+            </span>
+
+            <span>
+              Territorial Dynamics
+            </span>
+
+            <span>
+              GIS-AHP
+            </span>
+
+            <span>
+              Urban Sprawl
+            </span>
+
+            <span>
+              Spatial Modelling
+            </span>
+
           </div>
+
+
+
+          <!-- ORCID -->
+
+          <div class="research-identity">
+
+
+            <a
+              href="https://orcid.org/0009-0005-3299-880X"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="orcid-link">
+
+
+              <span class="orcid-icon">
+                iD
+              </span>
+
+
+              <span>
+
+                <small>
+                  ORCID
+                </small>
+
+                <strong>
+                  0009-0005-3299-880X
+                </strong>
+
+              </span>
+
+
+            </a>
+
+
+          </div>
+
 
         </aside>
 
 
+
+        <!-- PUBLICATIONS -->
+
         <div>
 
+
+          <!-- PUBLICATION 1 -->
+
           <article class="publication">
+
+
             <div class="publication-type">
               Peer-Reviewed Publication · 2025
             </div>
 
+
             <h4>
+
               Application of the SLEUTH Model for Land Use Prediction:
               Simulation of Urban Sprawl in the City of Meknes
+
             </h4>
+
+
+            <p class="publication-authors">
+              Badr Khallouq et al.
+            </p>
+
+
+            <p class="publication-journal">
+              E3S Web of Conferences · 2025
+            </p>
+
+
+            <div class="publication-links">
+
+
+              <a
+                href="https://doi.org/10.1051/e3sconf/202567601001"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="doi-button">
+
+                DOI · 10.1051/e3sconf/202567601001
+
+              </a>
+
+
+            </div>
+
+
+          </article>
+
+
+
+          <!-- PUBLICATION 2 -->
+
+          <article class="publication">
+
+
+            <div class="publication-type">
+              Peer-Reviewed Publication · 2025
+            </div>
+
+
+            <h4>
+
+              Urban Sprawl and Collective Land Vulnerability in
+              Irrigated Perimeters: A Geospatial and Predictive
+              Modeling Approach Using LCM in Sidi Kacem, Morocco
+
+            </h4>
+
+
+            <p class="publication-authors">
+              Badr Khallouq et al.
+            </p>
+
+
+            <p class="publication-journal">
+              E3S Web of Conferences · 2025
+            </p>
+
+
+            <div class="publication-links">
+
+
+              <a
+                href="https://doi.org/10.1051/e3sconf/202567602008"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="doi-button">
+
+                DOI · 10.1051/e3sconf/202567602008
+
+              </a>
+
+
+            </div>
+
+
+          </article>
+
+
+
+          <!-- MANUSCRIPT 1 -->
+
+          <article class="publication">
+
+
+            <div class="publication-type">
+              Research Manuscript
+            </div>
+
+
+            <h4>
+
+              Collective Land Reform and Good Land Governance in
+              Morocco: A Contextualized LGAF-Based Assessment of
+              the Melkisation Policy in Sidi Kacem
+
+            </h4>
+
 
             <p>
-              B. Khallouq · E3S Web of Conferences, 686, 06005.
+
+              Research addressing collective land reform,
+              institutional land governance and the territorial
+              implications of melkisation.
+
             </p>
+
+
           </article>
 
 
+
+          <!-- MANUSCRIPT 2 -->
+
           <article class="publication">
+
+
             <div class="publication-type">
-              Peer-Reviewed Research
+              Research Manuscript
             </div>
 
+
             <h4>
-              Urban Sprawl and Collective Land Vulnerability in Irrigated
-              Perimeters: A Geospatial and Predictive Modeling Approach
-              Using LCM in Sidi Kacem, Morocco
+
+              GIS-AHP Multi-Criteria Analysis for Mapping
+              Agricultural Land Valorization Potential of Collective
+              Farmlands in the Sidi Kacem Irrigated Perimeter,
+              Morocco
+
             </h4>
+
 
             <p>
-              Research on urban expansion, collective land vulnerability
-              and predictive spatial modelling.
+
+              GIS-based multi-criteria spatial assessment combining
+              land characteristics, accessibility, agricultural
+              conditions and AHP-based decision modelling.
+
             </p>
+
+
           </article>
 
 
-          <article class="publication">
-            <div class="publication-type">
-              Manuscript
-            </div>
 
-            <h4>
-              Collective Land Reform and Good Land Governance in Morocco:
-              A Contextualized LGAF-Based Assessment of the Melkisation
-              Policy in Sidi Kacem
-            </h4>
-          </article>
-
+          <!-- CONFERENCE -->
 
           <article class="publication">
-            <div class="publication-type">
-              Manuscript
-            </div>
-
-            <h4>
-              GIS-AHP Multi-Criteria Analysis for Mapping Agricultural
-              Land Valorization Potential of Collective Farmlands in the
-              Sidi Kacem Irrigated Perimeter, Morocco
-            </h4>
-          </article>
 
 
-          <article class="publication">
             <div class="publication-type">
               Scientific Communication · 2026
             </div>
 
+
             <h4>
-              FEZ GIS-Users' 2026 — 7th International Congress of GIS Users
+
+              FEZ GIS-Users' 2026 —
+              7th International Congress of GIS Users
+
             </h4>
 
+
             <p>
-              Oral presentation accepted · Fez, Morocco · 7 October 2026.
+
+              Oral presentation accepted ·
+              Fez, Morocco ·
+              7 October 2026.
+
             </p>
+
+
           </article>
 
+
         </div>
+
+
       </div>
 
+
     </div>
+
   </section>
 
 
-  <!-- EDUCATION & TEACHING -->
-  <section id="education" class="section">
+
+  <!-- ========================================================
+       EDUCATION & TEACHING
+       ======================================================== -->
+
+  <section
+    id="education"
+    class="section">
+
     <div class="container">
 
+
       <div class="section-heading">
-        <div class="section-label">Education & Knowledge Transfer</div>
+
+
+        <div class="section-label">
+          Education & Knowledge Transfer
+        </div>
+
 
         <h2 class="section-title">
           A multidisciplinary academic pathway
         </h2>
+
+
+        <p class="section-description">
+
+          Academic training connecting geography, territorial
+          planning, geospatial sciences, land governance and law.
+
+        </p>
+
+
       </div>
+
 
 
       <div class="two-column">
 
+
+        <!-- EDUCATION -->
+
         <div>
-          <h3 class="subsection-title">Education</h3>
+
+
+          <h3 class="subsection-title">
+            Education
+          </h3>
+
+
 
           <div class="timeline-item">
-            <h4>PhD in Geography</h4>
+
+            <h4>
+              PhD in Geography
+            </h4>
+
             <div class="institution">
               Sidi Mohamed Ben Abdellah University · Fez
             </div>
-            <div class="date">2021 — 2026</div>
+
+            <div class="date">
+              2021 — 2026
+            </div>
+
           </div>
 
+
+
           <div class="timeline-item">
+
             <h4>
               State Engineering Degree in Urban Planning and Territorial Development
             </h4>
+
             <div class="institution">
               Higher School of Architecture and Building Professions – UPF · Fez
             </div>
-            <div class="date">2022 — 2024</div>
+
+            <div class="date">
+              2022 — 2024
+            </div>
+
           </div>
 
+
+
           <div class="timeline-item">
+
             <h4>
               Specialised Master's Degree in Geospatial Sciences and Land Governance
             </h4>
+
             <div class="institution">
               Hassan II Agronomic and Veterinary Institute · Rabat
             </div>
-            <div class="date">2018 — 2020</div>
+
+            <div class="date">
+              2018 — 2020
+            </div>
+
           </div>
 
+
+
           <div class="timeline-item">
-            <h4>Bachelor's Degree in French Law</h4>
+
+            <h4>
+              Bachelor's Degree in French Law
+            </h4>
+
             <div class="institution">
               Mohammed V University · Rabat
             </div>
-            <div class="date">2018 — 2019</div>
+
+            <div class="date">
+              2018 — 2019
+            </div>
+
           </div>
 
+
+
           <div class="timeline-item">
+
             <h4>
               Professional Bachelor's Degree in GIS and Spatial Management
             </h4>
+
             <div class="institution">
               Ibn Tofail University · Kenitra
             </div>
-            <div class="date">2017 — 2018</div>
+
+            <div class="date">
+              2017 — 2018
+            </div>
+
           </div>
+
+
         </div>
 
 
+
+        <!-- TEACHING -->
+
         <div>
-          <h3 class="subsection-title">Teaching & Research Supervision</h3>
+
+
+          <h3 class="subsection-title">
+            Teaching & Research Supervision
+          </h3>
+
+
 
           <div class="timeline-item">
-            <h4>Advanced GIS for Territorial Planning</h4>
+
+            <h4>
+              Advanced GIS for Territorial Planning
+            </h4>
+
             <div class="institution">
               Spatial analysis methods and applied territorial analysis
             </div>
+
           </div>
 
+
+
           <div class="timeline-item">
-            <h4>Master's Research Supervision</h4>
+
+            <h4>
+              Master's Research Supervision
+            </h4>
+
             <div class="institution">
               Geospatial Sciences and Land Governance
             </div>
+
           </div>
 
+
+
           <div class="timeline-item">
-            <h4>GeoAI & Spatial Modelling</h4>
+
+            <h4>
+              GeoAI & Spatial Modelling
+            </h4>
+
             <div class="institution">
-              Machine Learning · Google Earth Engine · Remote Sensing ·
+
+              Machine Learning ·
+              Google Earth Engine ·
+              Remote Sensing ·
               Predictive Modelling
+
             </div>
+
           </div>
 
+
+
           <div class="timeline-item">
-            <h4>Research Themes</h4>
+
+            <h4>
+              Research Themes
+            </h4>
+
             <div class="institution">
-              Territorial dynamics · Land governance · Property valuation ·
+
+              Territorial dynamics ·
+              Land governance ·
+              Property valuation ·
               Geospatial decision support
+
             </div>
+
           </div>
+
 
         </div>
 
+
       </div>
+
+
     </div>
+
   </section>
 
 
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
 
-  <div class="container">
+  <!-- ========================================================
+       CONTACT
+       ======================================================== -->
 
-    <div class="section-heading">
-      <div class="section-label">Contact</div>
+  <section
+    id="contact"
+    class="section contact">
 
-      <h2 class="section-title" style="color: white;">
-        Let’s connect
-      </h2>
+    <div class="container">
 
-      <p class="section-description" style="color: #c4d5e1;">
-        For academic collaboration, research, teaching, geospatial projects,
-        territorial studies and professional enquiries, you can contact me
-        directly or connect with me through LinkedIn.
-      </p>
-    </div>
 
-    <div class="contact-links">
+      <div class="section-heading">
 
-      <a
-        href="mailto:baderkhalok@gmail.com"
-        class="contact-card">
 
-        <span class="contact-small">EMAIL</span>
-        <strong>baderkhalok@gmail.com</strong>
+        <div class="section-label">
+          Contact
+        </div>
 
-      </a>
 
-      <a
-        href="https://www.linkedin.com/in/dr-badr-khallouq-18aa323bb"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-card">
+        <h2
+          class="section-title"
+          style="color: white;">
 
-        <span class="contact-small">LINKEDIN</span>
-        <strong>Dr. Badr KHALLOUQ</strong>
+          Let’s connect
 
-      </a>
+        </h2>
 
-      <div class="contact-card">
 
-        <span class="contact-small">LOCATION</span>
-        <strong>Rabat, Morocco</strong>
+        <p
+          class="section-description"
+          style="color: #c4d5e1;">
+
+          For academic collaboration, research, teaching,
+          geospatial projects, territorial studies and professional
+          enquiries, you can contact me directly or connect through
+          my professional and scientific profiles.
+
+        </p>
+
 
       </div>
 
+
+
+      <div class="contact-links">
+
+
+        <!-- EMAIL -->
+
+        <a
+          href="mailto:baderkhalok@gmail.com"
+          class="contact-card">
+
+          <span class="contact-small">
+            EMAIL
+          </span>
+
+          <strong>
+            baderkhalok@gmail.com
+          </strong>
+
+        </a>
+
+
+
+        <!-- LINKEDIN -->
+
+        <a
+          href="https://www.linkedin.com/in/dr-badr-khallouq-18aa323bb"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-card">
+
+          <span class="contact-small">
+            LINKEDIN
+          </span>
+
+          <strong>
+            Dr. Badr KHALLOUQ
+          </strong>
+
+        </a>
+
+
+
+        <!-- ORCID -->
+
+        <a
+          href="https://orcid.org/0009-0005-3299-880X"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-card">
+
+          <span class="contact-small">
+            ORCID
+          </span>
+
+          <strong>
+            0009-0005-3299-880X
+          </strong>
+
+        </a>
+
+
+
+        <!-- LOCATION -->
+
+        <div class="contact-card">
+
+          <span class="contact-small">
+            LOCATION
+          </span>
+
+          <strong>
+            Rabat, Morocco
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-  <!-- FOOTER -->
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+
   <footer>
+
     <div class="container footer-inner">
+
+
       <div>
         © 2026 Dr. Badr KHALLOUQ
       </div>
 
+
       <div>
         Territories · Land · Geospatial Intelligence · Research
       </div>
+
+
     </div>
+
   </footer>
 
+
 </body>
+
 </html>
+```
