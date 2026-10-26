@@ -2342,6 +2342,34 @@ body.modal-open {
 
 }
 
+
+/* ============================================================
+   DYNAMIC GEOSPATIAL BACKGROUND — 2026
+   ============================================================ */
+.hero {
+  background: linear-gradient(115deg, rgba(255,255,255,.97) 0%, rgba(248,252,254,.94) 48%, rgba(228,243,249,.86) 100%);
+  isolation: isolate;
+}
+.geo-canvas {
+  position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:.95;
+}
+.hero::before {
+  content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    radial-gradient(circle at 78% 30%, rgba(8,119,201,.16), transparent 25%),
+    radial-gradient(circle at 88% 72%, rgba(66,169,189,.12), transparent 24%),
+    linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.93) 42%, rgba(255,255,255,.35) 72%, rgba(255,255,255,.12) 100%);
+}
+.hero-grid { z-index:1; opacity:.7; background-size:72px 72px; animation:gridDrift 24s linear infinite; }
+.hero-contour { z-index:1; opacity:.55; animation:contourFloat 12s ease-in-out infinite alternate; }
+.hero-inner { z-index:3; }
+@keyframes gridDrift { to { background-position:72px 36px, 36px 72px; } }
+@keyframes contourFloat { from { transform:rotate(-8deg) translate3d(0,0,0) scale(1); } to { transform:rotate(-3deg) translate3d(-24px,18px,0) scale(1.05); } }
+.geo-coordinate { position:absolute; z-index:2; pointer-events:none; font:600 11px/1.2 "Segoe UI",Arial,sans-serif; letter-spacing:.14em; color:rgba(9,40,63,.25); }
+.geo-coordinate.c1{right:5%;top:20%;}.geo-coordinate.c2{right:19%;bottom:12%;}.geo-coordinate.c3{left:48%;top:12%;}
+@media (prefers-reduced-motion: reduce) { .hero-grid,.hero-contour{animation:none!important;} }
+@media (max-width:900px){ .geo-canvas{opacity:.58}.hero::before{background:linear-gradient(90deg,rgba(255,255,255,.97),rgba(255,255,255,.76));}.geo-coordinate{display:none;} }
+
 </style>
 
 </head>
@@ -2414,6 +2442,11 @@ body.modal-open {
      ========================================================== -->
 
 <main id="home" class="hero">
+
+  <canvas id="geoCanvas" class="geo-canvas" aria-hidden="true"></canvas>
+  <span class="geo-coordinate c1">34°13′ N</span>
+  <span class="geo-coordinate c2">5°42′ W</span>
+  <span class="geo-coordinate c3">TERRITORIAL SYSTEMS</span>
 
   <div class="hero-grid"></div>
 
@@ -3975,6 +4008,38 @@ body.modal-open {
       closeMap();
     }
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  const canvas=document.getElementById('geoCanvas');
+  const hero=document.getElementById('home');
+  if(!canvas||!hero) return;
+  const ctx=canvas.getContext('2d');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w=0,h=0,dpr=1,t=0,raf;
+  const nodes=Array.from({length:26},(_,i)=>({x:(i*73%97)/100,y:(i*47%89)/100,r:1.5+(i%3)*.6,p:i*.63}));
+  function resize(){ dpr=Math.min(window.devicePixelRatio||1,2); w=hero.clientWidth; h=hero.clientHeight; canvas.width=w*dpr; canvas.height=h*dpr; canvas.style.width=w+'px'; canvas.style.height=h+'px'; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  function contour(cx,cy,rx,ry,phase,alpha){
+    ctx.beginPath();
+    for(let i=0;i<=120;i++){ const a=i/120*Math.PI*2; const wobble=1+.055*Math.sin(a*5+phase)+.035*Math.cos(a*3-phase); const x=cx+Math.cos(a)*rx*wobble; const y=cy+Math.sin(a)*ry*wobble; i?ctx.lineTo(x,y):ctx.moveTo(x,y); }
+    ctx.closePath(); ctx.strokeStyle='rgba(8,119,201,'+alpha+')'; ctx.lineWidth=1; ctx.stroke();
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h); t+=reduce?0:.0035;
+    const cx=w*.82+Math.sin(t)*18, cy=h*.47+Math.cos(t*.8)*12;
+    for(let i=0;i<8;i++) contour(cx,cy,120+i*34,75+i*24,t*3+i*.55,.075+i*.008);
+    ctx.lineWidth=.8;
+    nodes.forEach((a,i)=>{
+      const ax=w*(.55+a.x*.45)+Math.sin(t*2+a.p)*7, ay=h*(.08+a.y*.84)+Math.cos(t*1.6+a.p)*6;
+      for(let j=i+1;j<nodes.length;j++){ const b=nodes[j]; if((i*7+j*11)%13!==0) continue; const bx=w*(.55+b.x*.45)+Math.sin(t*2+b.p)*7, by=h*(.08+b.y*.84)+Math.cos(t*1.6+b.p)*6; const d=Math.hypot(ax-bx,ay-by); if(d<230){ ctx.beginPath(); ctx.moveTo(ax,ay); ctx.lineTo(bx,by); ctx.strokeStyle='rgba(66,169,189,'+(0.16*(1-d/230))+')'; ctx.stroke(); } }
+      ctx.beginPath(); ctx.arc(ax,ay,a.r,0,Math.PI*2); ctx.fillStyle=i%4===0?'rgba(8,119,201,.42)':'rgba(66,169,189,.32)'; ctx.fill();
+    });
+    if(!reduce) raf=requestAnimationFrame(draw);
+  }
+  resize(); draw(); window.addEventListener('resize',()=>{cancelAnimationFrame(raf);resize();draw();},{passive:true});
 })();
 </script>
 
