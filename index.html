@@ -2815,6 +2815,206 @@ body.modal-open {
   }
 }
 
+
+/* ============================================================
+   DYNAMIC TERRITORIAL CHANGE HERO — PHOTOREALISTIC BACKGROUND
+   ============================================================ */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg,
+      rgba(249,253,255,.98) 0%,
+      rgba(247,252,254,.93) 25%,
+      rgba(240,249,252,.70) 43%,
+      rgba(8,40,65,.12) 67%,
+      rgba(5,30,52,.20) 100%
+    ),
+    url("geospatial-territorial-dynamics-bg.png") center center / cover no-repeat;
+}
+
+/* Slow cinematic movement of the real background */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -4%;
+  z-index: 0;
+  pointer-events: none;
+  background: url("geospatial-territorial-dynamics-bg.png") center center / cover no-repeat;
+  opacity: .18;
+  mix-blend-mode: soft-light;
+  animation: geoLandscapeDrift 20s ease-in-out infinite alternate;
+}
+
+/* Animated remote-sensing scan */
+.hero-scan {
+  position: absolute;
+  z-index: 2;
+  top: -18%;
+  right: 7%;
+  width: 25%;
+  height: 140%;
+  pointer-events: none;
+  opacity: .52;
+  transform: rotate(13deg);
+  background:
+    linear-gradient(90deg,
+      transparent 0%,
+      rgba(44,217,255,.03) 20%,
+      rgba(44,217,255,.32) 49%,
+      rgba(255,255,255,.62) 50%,
+      rgba(44,217,255,.28) 51%,
+      rgba(44,217,255,.03) 80%,
+      transparent 100%
+    );
+  filter: blur(.4px);
+  animation: remoteScan 8.5s ease-in-out infinite;
+}
+
+/* Animated geospatial observation points */
+.hero-data-points {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-data-points i {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #32d9ff;
+  border: 1px solid white;
+  box-shadow:
+    0 0 0 5px rgba(50,217,255,.10),
+    0 0 18px rgba(50,217,255,.88);
+  animation: geoPoint 2.7s ease-in-out infinite;
+}
+
+.hero-data-points i:nth-child(1) { left: 52%; top: 48%; }
+.hero-data-points i:nth-child(2) { left: 61%; top: 57%; animation-delay: .4s; }
+.hero-data-points i:nth-child(3) { left: 70%; top: 43%; animation-delay: .8s; }
+.hero-data-points i:nth-child(4) { left: 79%; top: 62%; animation-delay: 1.2s; }
+.hero-data-points i:nth-child(5) { left: 88%; top: 49%; animation-delay: 1.6s; }
+
+/* Subtle animated GIS grid over the territory */
+.hero-grid-dynamic {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  width: 64%;
+  height: 58%;
+  pointer-events: none;
+  opacity: .22;
+  transform: perspective(700px) rotateX(62deg);
+  transform-origin: bottom center;
+  background-image:
+    linear-gradient(rgba(73,222,255,.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(73,222,255,.45) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to left, #000 50%, transparent 100%);
+  animation: gisGridMove 14s linear infinite;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 6;
+}
+
+/* Improve text readability while preserving the visible landscape */
+.hero-content {
+  position: relative;
+  z-index: 7;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -28px -38px -28px -55px;
+  border-radius: 0 26px 26px 0;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,.84),
+    rgba(255,255,255,.66) 67%,
+    rgba(255,255,255,0)
+  );
+  backdrop-filter: blur(1.5px);
+}
+
+.profile-card {
+  position: relative;
+  z-index: 8;
+  background: rgba(255,255,255,.90);
+  backdrop-filter: blur(12px);
+}
+
+@keyframes geoLandscapeDrift {
+  0%   { transform: scale(1.01) translate3d(-.7%, 0, 0); }
+  100% { transform: scale(1.055) translate3d(1.2%, -.7%, 0); }
+}
+
+@keyframes remoteScan {
+  0%, 100% { transform: translateX(150%) rotate(13deg); opacity: 0; }
+  18% { opacity: .25; }
+  50% { opacity: .58; }
+  82% { opacity: .22; }
+  100% { transform: translateX(-310%) rotate(13deg); opacity: 0; }
+}
+
+@keyframes geoPoint {
+  0%, 100% { transform: scale(.72); opacity: .45; }
+  50% { transform: scale(1.45); opacity: 1; }
+}
+
+@keyframes gisGridMove {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 56px 56px, 56px 56px; }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    background-position: 60% center;
+  }
+
+  .hero::after {
+    background-position: 60% center;
+  }
+
+  .hero-grid-dynamic {
+    width: 100%;
+    opacity: .14;
+  }
+
+  .hero-content::before {
+    background: rgba(255,255,255,.80);
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    background-position: 66% center;
+  }
+
+  .hero-scan,
+  .hero-data-points {
+    opacity: .55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after,
+  .hero-scan,
+  .hero-data-points i,
+  .hero-grid-dynamic {
+    animation: none !important;
+  }
+}
+
 </style>
 
 </head>
@@ -2887,46 +3087,13 @@ body.modal-open {
      ========================================================== -->
 
 <main id="home" class="hero">
-
-  <!-- Dynamic territorial landscape:
-       landscape + parcels + GNSS + GIS + remote sensing +
-       photogrammetry + territorial decision support -->
-  <div class="territory-digital-bg" aria-hidden="true">
-    <div class="terrain-layer"></div>
-    <div class="parcel-layer"></div>
-    <div class="rs-swath"></div>
-
-    <div class="geo-network">
-      <span class="geo-line l1"></span>
-      <span class="geo-line l2"></span>
-      <span class="geo-line l3"></span>
-      <span class="geo-line l4"></span>
-      <span class="geo-line l5"></span>
-
-      <span class="geo-node n1"></span>
-      <span class="geo-node n2"></span>
-      <span class="geo-node n3"></span>
-      <span class="geo-node n4"></span>
-      <span class="geo-node n5"></span>
-    </div>
-
-    <div class="satellite-symbol"></div>
-    <div class="gnss-target"></div>
-    <div class="photo-footprint"></div>
-
-    <div class="geo-tech tech-satellite">Remote Sensing</div>
-    <div class="geo-tech tech-gnss">GNSS Positioning</div>
-    <div class="geo-tech tech-gis">GIS · Spatial Analysis</div>
-    <div class="geo-tech tech-drone">Drone · Photogrammetry</div>
-    <div class="geo-tech tech-planning">Territorial Planning</div>
-
-    <div class="decision-strip">
-      Monitoring <span>→</span> Management <span>→</span> Planning
-    </div>
+  <div class="hero-grid-dynamic" aria-hidden="true"></div>
+  <div class="hero-scan" aria-hidden="true"></div>
+  <div class="hero-data-points" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i>
   </div>
 
-
-  <canvas id="geoCanvas" class="geo-canvas" aria-hidden="true"></canvas>
+<canvas id="geoCanvas" class="geo-canvas" aria-hidden="true"></canvas>
   <div class="digital-scan" aria-hidden="true"></div>
   <div class="digital-label" aria-hidden="true">GIS · GEOAI · REMOTE SENSING · SPATIAL INTELLIGENCE</div>
   <span class="geo-coordinate c1">34°13′ N</span>
