@@ -2464,6 +2464,357 @@ body.modal-open {
   .digital-scan,.digital-label{display:none;}
 }
 
+
+/* ============================================================
+   TERRITORIAL DIGITAL LANDSCAPE — HERO ENHANCEMENT
+   Territory + Landscape + GNSS + GIS + Remote Sensing +
+   Photogrammetry + Monitoring + Management + Planning
+   ============================================================ */
+
+.hero {
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 79% 31%, rgba(0, 214, 255, 0.24), transparent 18%),
+    radial-gradient(circle at 69% 71%, rgba(52, 180, 112, 0.18), transparent 24%),
+    linear-gradient(112deg, #f9fdff 0%, #edf8fb 43%, #ccebf2 72%, #9dd7e2 100%);
+}
+
+/* Digital territorial canvas */
+.territory-digital-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Geographic terrain / landscape */
+.terrain-layer {
+  position: absolute;
+  left: 35%;
+  right: -8%;
+  bottom: -18%;
+  height: 69%;
+  opacity: .86;
+  transform: perspective(850px) rotateX(61deg) rotateZ(-7deg);
+  transform-origin: center bottom;
+  background:
+    linear-gradient(27deg, transparent 48%, rgba(6,87,126,.16) 49%, rgba(6,87,126,.16) 50%, transparent 51%) 0 0/86px 86px,
+    linear-gradient(-27deg, transparent 48%, rgba(6,87,126,.13) 49%, rgba(6,87,126,.13) 50%, transparent 51%) 0 0/86px 86px,
+    linear-gradient(90deg, rgba(28,143,111,.12), rgba(0,159,207,.07));
+  clip-path: polygon(0 28%, 12% 19%, 25% 25%, 38% 8%, 51% 18%, 66% 4%, 79% 20%, 100% 10%, 100% 100%, 0 100%);
+  animation: terrainPulse 10s ease-in-out infinite alternate;
+}
+
+/* Cadastral / parcel mesh */
+.parcel-layer {
+  position: absolute;
+  width: 61%;
+  height: 58%;
+  right: -2%;
+  bottom: -4%;
+  opacity: .56;
+  transform: perspective(760px) rotateX(58deg) rotateZ(-8deg);
+  background-image:
+    linear-gradient(rgba(10,96,133,.27) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,96,133,.27) 1px, transparent 1px);
+  background-size: 72px 54px;
+  mask-image: linear-gradient(to left, #000 58%, transparent 100%);
+}
+
+/* Remote sensing swath */
+.rs-swath {
+  position: absolute;
+  width: 760px;
+  height: 170px;
+  right: -160px;
+  top: 19%;
+  opacity: .38;
+  transform: rotate(-22deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0,214,255,.05) 14%,
+    rgba(0,214,255,.44) 50%,
+    rgba(0,214,255,.05) 86%,
+    transparent
+  );
+  filter: blur(1px);
+  animation: swathScan 8s ease-in-out infinite;
+}
+
+/* GIS nodes and territorial connections */
+.geo-network {
+  position: absolute;
+  inset: 0;
+  opacity: .82;
+}
+
+.geo-line {
+  position: absolute;
+  height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, rgba(0,123,174,.08), rgba(0,194,224,.72), rgba(0,123,174,.08));
+  box-shadow: 0 0 8px rgba(0,196,232,.22);
+}
+
+.geo-line.l1 { width: 235px; right: 11%; top: 38%; transform: rotate(23deg); }
+.geo-line.l2 { width: 180px; right: 22%; top: 48%; transform: rotate(-31deg); }
+.geo-line.l3 { width: 290px; right: 6%; top: 60%; transform: rotate(9deg); }
+.geo-line.l4 { width: 210px; right: 25%; top: 67%; transform: rotate(35deg); }
+.geo-line.l5 { width: 175px; right: 8%; top: 76%; transform: rotate(-28deg); }
+
+.geo-node {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border: 2px solid #eaffff;
+  border-radius: 50%;
+  background: #00a9d5;
+  box-shadow:
+    0 0 0 5px rgba(0,169,213,.13),
+    0 0 16px rgba(0,169,213,.68);
+  animation: nodePulse 2.8s ease-in-out infinite;
+}
+
+.geo-node.n1 { right: 16%; top: 35%; }
+.geo-node.n2 { right: 29%; top: 47%; animation-delay: .5s; }
+.geo-node.n3 { right: 8%; top: 58%; animation-delay: 1s; }
+.geo-node.n4 { right: 24%; top: 70%; animation-delay: 1.5s; }
+.geo-node.n5 { right: 11%; top: 79%; animation-delay: 2s; }
+
+/* Technology labels */
+.geo-tech {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1px solid rgba(4,100,139,.28);
+  border-radius: 5px;
+  color: #075a7a;
+  background: rgba(242,253,255,.76);
+  box-shadow: 0 7px 20px rgba(5,55,78,.08);
+  backdrop-filter: blur(8px);
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: .55px;
+  text-transform: uppercase;
+}
+
+.geo-tech::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #00a9d5;
+  box-shadow: 0 0 9px rgba(0,169,213,.7);
+}
+
+.tech-satellite { right: 8%; top: 17%; }
+.tech-gnss { right: 31%; top: 31%; }
+.tech-gis { right: 6%; top: 47%; }
+.tech-drone { right: 27%; top: 61%; }
+.tech-planning { right: 6%; top: 71%; }
+
+/* GNSS target */
+.gnss-target {
+  position: absolute;
+  right: 31%;
+  top: 39%;
+  width: 86px;
+  height: 86px;
+  border: 1px solid rgba(0,150,193,.46);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 15px rgba(0,150,193,.07),
+    0 0 0 31px rgba(0,150,193,.04);
+  animation: targetPulse 3.6s ease-in-out infinite;
+}
+
+.gnss-target::before,
+.gnss-target::after {
+  content: "";
+  position: absolute;
+  background: rgba(0,150,193,.55);
+}
+
+.gnss-target::before {
+  width: 1px;
+  height: 120px;
+  left: 42px;
+  top: -18px;
+}
+
+.gnss-target::after {
+  width: 120px;
+  height: 1px;
+  top: 42px;
+  left: -18px;
+}
+
+/* Satellite / observation icon */
+.satellite-symbol {
+  position: absolute;
+  right: 13%;
+  top: 24%;
+  width: 54px;
+  height: 18px;
+  border: 2px solid rgba(5,91,128,.72);
+  border-radius: 4px;
+  transform: rotate(-24deg);
+  animation: satelliteFloat 5s ease-in-out infinite;
+}
+
+.satellite-symbol::before,
+.satellite-symbol::after {
+  content: "";
+  position: absolute;
+  width: 29px;
+  height: 23px;
+  top: -5px;
+  border: 1px solid rgba(5,91,128,.62);
+  background:
+    linear-gradient(rgba(0,169,213,.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,169,213,.2) 1px, transparent 1px);
+  background-size: 7px 7px;
+}
+
+.satellite-symbol::before { left: -35px; }
+.satellite-symbol::after { right: -35px; }
+
+/* Drone / photogrammetry footprint */
+.photo-footprint {
+  position: absolute;
+  right: 21%;
+  bottom: 17%;
+  width: 145px;
+  height: 92px;
+  border: 1px dashed rgba(26,142,104,.58);
+  transform: skewX(-15deg) rotate(-8deg);
+  background: rgba(46,179,118,.055);
+  animation: footprintGlow 4s ease-in-out infinite;
+}
+
+/* Decision-support panel */
+.decision-strip {
+  position: absolute;
+  right: 5.5%;
+  bottom: 5.5%;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding: 8px 11px;
+  border-radius: 5px;
+  color: #07516e;
+  background: rgba(255,255,255,.73);
+  border: 1px solid rgba(5,100,140,.24);
+  backdrop-filter: blur(8px);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .65px;
+  text-transform: uppercase;
+}
+
+.decision-strip span {
+  color: #00a0c7;
+}
+
+/* Keep content clearly above the digital landscape */
+.hero-inner {
+  position: relative;
+  z-index: 5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 7;
+}
+
+.profile-card {
+  position: relative;
+  z-index: 8;
+  background: rgba(255,255,255,.90);
+  border-color: rgba(118,176,198,.58);
+  backdrop-filter: blur(13px);
+}
+
+@keyframes terrainPulse {
+  from { transform: perspective(850px) rotateX(61deg) rotateZ(-7deg) translateY(0); opacity: .72; }
+  to   { transform: perspective(850px) rotateX(61deg) rotateZ(-7deg) translateY(-8px); opacity: .94; }
+}
+
+@keyframes swathScan {
+  0%, 100% { transform: rotate(-22deg) translateX(80px); opacity: .18; }
+  50% { transform: rotate(-22deg) translateX(-110px); opacity: .52; }
+}
+
+@keyframes nodePulse {
+  0%, 100% { transform: scale(.9); opacity: .7; }
+  50% { transform: scale(1.35); opacity: 1; }
+}
+
+@keyframes targetPulse {
+  0%, 100% { transform: scale(.92); opacity: .56; }
+  50% { transform: scale(1.08); opacity: .95; }
+}
+
+@keyframes satelliteFloat {
+  0%, 100% { transform: rotate(-24deg) translateY(0); }
+  50% { transform: rotate(-20deg) translateY(-8px); }
+}
+
+@keyframes footprintGlow {
+  0%, 100% { opacity: .38; }
+  50% { opacity: .9; box-shadow: inset 0 0 25px rgba(46,179,118,.10); }
+}
+
+@media (max-width: 1000px) {
+  .territory-digital-bg {
+    opacity: .58;
+  }
+
+  .terrain-layer {
+    left: 25%;
+  }
+
+  .geo-tech,
+  .decision-strip {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .territory-digital-bg {
+    opacity: .35;
+  }
+
+  .terrain-layer {
+    left: 5%;
+    width: 120%;
+  }
+
+  .satellite-symbol,
+  .gnss-target,
+  .photo-footprint {
+    opacity: .65;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terrain-layer,
+  .rs-swath,
+  .geo-node,
+  .gnss-target,
+  .satellite-symbol,
+  .photo-footprint {
+    animation: none !important;
+  }
+}
+
 </style>
 
 </head>
@@ -2536,6 +2887,44 @@ body.modal-open {
      ========================================================== -->
 
 <main id="home" class="hero">
+
+  <!-- Dynamic territorial landscape:
+       landscape + parcels + GNSS + GIS + remote sensing +
+       photogrammetry + territorial decision support -->
+  <div class="territory-digital-bg" aria-hidden="true">
+    <div class="terrain-layer"></div>
+    <div class="parcel-layer"></div>
+    <div class="rs-swath"></div>
+
+    <div class="geo-network">
+      <span class="geo-line l1"></span>
+      <span class="geo-line l2"></span>
+      <span class="geo-line l3"></span>
+      <span class="geo-line l4"></span>
+      <span class="geo-line l5"></span>
+
+      <span class="geo-node n1"></span>
+      <span class="geo-node n2"></span>
+      <span class="geo-node n3"></span>
+      <span class="geo-node n4"></span>
+      <span class="geo-node n5"></span>
+    </div>
+
+    <div class="satellite-symbol"></div>
+    <div class="gnss-target"></div>
+    <div class="photo-footprint"></div>
+
+    <div class="geo-tech tech-satellite">Remote Sensing</div>
+    <div class="geo-tech tech-gnss">GNSS Positioning</div>
+    <div class="geo-tech tech-gis">GIS · Spatial Analysis</div>
+    <div class="geo-tech tech-drone">Drone · Photogrammetry</div>
+    <div class="geo-tech tech-planning">Territorial Planning</div>
+
+    <div class="decision-strip">
+      Monitoring <span>→</span> Management <span>→</span> Planning
+    </div>
+  </div>
+
 
   <canvas id="geoCanvas" class="geo-canvas" aria-hidden="true"></canvas>
   <div class="digital-scan" aria-hidden="true"></div>
