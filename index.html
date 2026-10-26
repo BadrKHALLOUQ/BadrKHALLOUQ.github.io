@@ -30,48 +30,41 @@
   <meta property="og:image"
         content="https://badrkhallouq.github.io/badr-khallouq.png">
 
-
   <style>
 
     /* ==========================================================
-       DESIGN SYSTEM
+       01. DESIGN SYSTEM
        ========================================================== */
 
     :root {
-
       --navy-950: #061827;
-      --navy-900: #0a2237;
-      --navy-850: #0c2b45;
-      --navy-800: #103852;
+      --navy-900: #09243a;
+      --navy-850: #0c2d47;
+      --navy-800: #123b59;
 
       --blue: #0877d1;
-      --blue-dark: #0866b2;
-      --blue-soft: #dceef9;
+      --blue-dark: #0565b3;
+      --blue-soft: #e6f2fa;
 
       --cyan: #48b7c9;
-      --cyan-soft: #dff4f5;
 
-      --green-orcid: #a6ce39;
+      --orcid: #a6ce39;
 
-      --ink: #16334a;
-      --text: #526c80;
-      --muted: #7b91a2;
+      --ink: #17364e;
+      --text: #506b80;
+      --muted: #7890a3;
 
       --line: #dce7ee;
-      --line-dark: rgba(255,255,255,0.13);
 
       --white: #ffffff;
-
       --soft: #f5f8fa;
-      --soft-blue: #edf5f9;
+      --soft-blue: #eef5f8;
 
       --shadow:
         0 22px 60px rgba(7, 31, 51, 0.10);
 
       --shadow-small:
-        0 12px 30px rgba(7, 31, 51, 0.07);
-
-      --radius: 10px;
+        0 12px 32px rgba(7, 31, 51, 0.07);
     }
 
 
@@ -95,11 +88,9 @@
         sans-serif;
 
       color: var(--ink);
-
       background: var(--white);
 
       line-height: 1.7;
-
       overflow-x: hidden;
     }
 
@@ -109,13 +100,8 @@
     }
 
 
-    button {
-      font: inherit;
-    }
-
-
     section {
-      scroll-margin-top: 82px;
+      scroll-margin-top: 80px;
     }
 
 
@@ -127,27 +113,23 @@
 
 
     /* ==========================================================
-       NAVIGATION
+       02. NAVIGATION
        ========================================================== */
 
     header {
       position: sticky;
-
       top: 0;
 
       z-index: 1000;
 
       background:
-        rgba(255, 255, 255, 0.92);
+        rgba(255, 255, 255, 0.93);
 
-      backdrop-filter:
-        blur(18px);
-
-      -webkit-backdrop-filter:
-        blur(18px);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
 
       border-bottom:
-        1px solid rgba(210, 225, 234, 0.85);
+        1px solid rgba(215, 228, 236, 0.90);
     }
 
 
@@ -160,9 +142,7 @@
       margin: auto;
 
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
 
       gap: 30px;
@@ -171,34 +151,32 @@
 
     .brand {
       display: flex;
-
       align-items: center;
 
       gap: 11px;
 
-      text-decoration: none;
-
       color: var(--navy-900);
 
-      font-size: 19px;
+      text-decoration: none;
 
+      font-size: 19px;
       font-weight: 800;
 
-      letter-spacing: 0.3px;
-
+      letter-spacing: 0.2px;
       white-space: nowrap;
     }
 
 
     .brand-mark {
-      width: 31px;
-      height: 31px;
+      width: 32px;
+      height: 32px;
 
       display: grid;
-
       place-items: center;
 
       border-radius: 50%;
+
+      color: white;
 
       background:
         linear-gradient(
@@ -207,23 +185,19 @@
           var(--blue)
         );
 
-      color: white;
-
       font-size: 10px;
-
-      letter-spacing: 0.5px;
+      font-weight: 800;
 
       box-shadow:
-        0 7px 18px rgba(8,119,209,0.18);
+        0 7px 18px rgba(8, 119, 209, 0.18);
     }
 
 
     .nav-links {
       display: flex;
-
       align-items: center;
 
-      gap: 26px;
+      gap: 25px;
 
       list-style: none;
     }
@@ -232,12 +206,11 @@
     .nav-links a {
       position: relative;
 
+      color: #425e73;
+
       text-decoration: none;
 
-      color: #405d73;
-
       font-size: 13px;
-
       font-weight: 650;
 
       transition: 0.2s ease;
@@ -273,7 +246,7 @@
 
 
     /* ==========================================================
-       HERO
+       03. HERO
        ========================================================== */
 
     .hero {
@@ -283,7 +256,6 @@
         calc(100vh - 76px);
 
       display: flex;
-
       align-items: center;
 
       overflow: hidden;
@@ -294,7 +266,7 @@
         linear-gradient(
           105deg,
           #ffffff 0%,
-          #ffffff 46%,
+          #ffffff 44%,
           #f7fafc 67%,
           #edf4f7 100%
         );
@@ -303,7 +275,7 @@
 
 
     /* ==========================================================
-       PROFESSIONAL GEOSPATIAL BACKGROUND
+       04. PROFESSIONAL GEOSPATIAL BACKGROUND
        ========================================================== */
 
     .geo-background {
@@ -319,20 +291,16 @@
     }
 
 
-    /*
-      Large professional cartographic glow
-    */
-
     .geo-background::before {
       content: "";
 
       position: absolute;
 
-      width: 900px;
-      height: 900px;
+      width: 950px;
+      height: 950px;
 
-      right: -290px;
-      top: -330px;
+      right: -320px;
+      top: -390px;
 
       border-radius: 50%;
 
@@ -341,7 +309,7 @@
           circle,
           rgba(8,119,209,0.10) 0%,
           rgba(72,183,201,0.055) 32%,
-          rgba(255,255,255,0) 69%
+          transparent 69%
         );
     }
 
@@ -354,7 +322,7 @@
       width: 700px;
       height: 700px;
 
-      right: 8%;
+      right: 6%;
       bottom: -520px;
 
       border-radius: 50%;
@@ -380,12 +348,10 @@
       opacity: 0.75;
 
       background-image:
-
         linear-gradient(
           rgba(8,119,209,0.045) 1px,
           transparent 1px
         ),
-
         linear-gradient(
           90deg,
           rgba(8,119,209,0.045) 1px,
@@ -407,15 +373,6 @@
       animation:
         gridMove 24s linear infinite;
 
-      -webkit-mask-image:
-        linear-gradient(
-          to right,
-          transparent 0%,
-          transparent 33%,
-          black 66%,
-          black 100%
-        );
-
       mask-image:
         linear-gradient(
           to right,
@@ -428,7 +385,6 @@
 
 
     @keyframes gridMove {
-
       from {
         background-position: 0 0;
       }
@@ -436,7 +392,6 @@
       to {
         background-position: 58px 58px;
       }
-
     }
 
 
@@ -452,7 +407,7 @@
       right: -55px;
       top: 40px;
 
-      opacity: 0.65;
+      opacity: 0.66;
 
       animation:
         mapFloat 16s ease-in-out infinite alternate;
@@ -527,7 +482,6 @@
 
 
     @keyframes mapFloat {
-
       from {
         transform:
           translateY(-7px)
@@ -539,12 +493,11 @@
           translateY(12px)
           rotate(1deg);
       }
-
     }
 
 
 
-    /* PARCEL / CADASTRAL LINES */
+    /* CADASTRAL / PARCEL LINES */
 
     .parcel {
       position: absolute;
@@ -552,8 +505,7 @@
       border:
         1px solid rgba(8,119,209,0.085);
 
-      transform:
-        rotate(-11deg);
+      transform: rotate(-11deg);
 
       border-radius: 2px;
     }
@@ -587,7 +539,7 @@
 
 
 
-    /* GEOSPATIAL NETWORK */
+    /* NETWORK LINES */
 
     .territorial-line {
       position: absolute;
@@ -611,11 +563,9 @@
       width: 500px;
 
       right: 3%;
-
       top: 35%;
 
-      transform:
-        rotate(28deg);
+      transform: rotate(28deg);
     }
 
 
@@ -623,11 +573,9 @@
       width: 430px;
 
       right: 12%;
-
       top: 59%;
 
-      transform:
-        rotate(-21deg);
+      transform: rotate(-21deg);
     }
 
 
@@ -635,11 +583,9 @@
       width: 360px;
 
       right: 3%;
-
       top: 72%;
 
-      transform:
-        rotate(11deg);
+      transform: rotate(11deg);
     }
 
 
@@ -657,7 +603,7 @@
       background: var(--blue);
 
       border:
-        2px solid rgba(255,255,255,0.9);
+        2px solid rgba(255,255,255,0.90);
 
       box-shadow:
         0 0 0 6px rgba(8,119,209,0.08);
@@ -698,7 +644,6 @@
 
 
     @keyframes nodePulse {
-
       0%,
       100% {
         opacity: 0.45;
@@ -709,18 +654,17 @@
         opacity: 1;
         transform: scale(1.12);
       }
-
     }
 
 
 
-    /* SMALL MAP COORDINATES */
+    /* MAP LABELS */
 
     .map-coordinate {
       position: absolute;
 
       color:
-        rgba(31, 92, 132, 0.34);
+        rgba(31,92,132,0.34);
 
       font-family:
         "Courier New",
@@ -746,7 +690,7 @@
 
 
     /* ==========================================================
-       HERO CONTENT
+       05. HERO CONTENT
        ========================================================== */
 
     .hero-inner {
@@ -768,7 +712,7 @@
         minmax(0, 1.35fr)
         minmax(300px, 0.65fr);
 
-      gap: 78px;
+      gap: 75px;
 
       align-items: center;
     }
@@ -896,7 +840,7 @@
 
 
     /* ==========================================================
-       BUTTONS
+       06. BUTTONS
        ========================================================== */
 
     .buttons {
@@ -906,7 +850,7 @@
 
       align-items: stretch;
 
-      gap: 11px;
+      gap: 10px;
     }
 
 
@@ -920,17 +864,15 @@
       justify-content: center;
 
       padding:
-        12px 20px;
+        12px 18px;
 
       border-radius: 5px;
 
       text-decoration: none;
 
-      font-size: 13px;
+      font-size: 12.5px;
 
       font-weight: 750;
-
-      cursor: pointer;
 
       transition:
         transform 0.2s ease,
@@ -972,7 +914,7 @@
       color: var(--navy-900);
 
       background:
-        rgba(255,255,255,0.84);
+        rgba(255,255,255,0.86);
 
       border:
         1px solid #bcd0dd;
@@ -991,164 +933,37 @@
     }
 
 
-
-    /* ==========================================================
-       CV DROPDOWN
-       ========================================================== */
-
-    .cv-dropdown {
+    .btn-cv {
       position: relative;
-
-      display: inline-flex;
+      padding-left: 42px;
     }
 
 
-    .cv-button {
-      gap: 8px;
-    }
+    .btn-cv::before {
+      content: "PDF";
 
-
-    .cv-arrow {
-      display: inline-block;
-
-      font-size: 15px;
-
-      transition:
-        transform 0.22s ease;
-    }
-
-
-    .cv-menu {
       position: absolute;
 
-      top: calc(100% + 10px);
+      left: 12px;
 
-      left: 0;
+      color: var(--blue);
 
-      width: 245px;
+      font-size: 8px;
 
-      padding: 7px;
+      font-weight: 900;
 
-      background:
-        rgba(255,255,255,0.98);
-
-      border:
-        1px solid #d8e5ed;
-
-      border-radius: 8px;
-
-      box-shadow:
-        0 20px 50px rgba(7,31,51,0.16);
-
-      opacity: 0;
-
-      visibility: hidden;
-
-      transform:
-        translateY(-6px);
-
-      transition:
-        opacity 0.18s ease,
-        visibility 0.18s ease,
-        transform 0.18s ease;
-
-      z-index: 200;
+      letter-spacing: 0.4px;
     }
 
 
-    .cv-dropdown:hover .cv-menu,
-    .cv-dropdown:focus-within .cv-menu {
-      opacity: 1;
-
-      visibility: visible;
-
-      transform:
-        translateY(0);
-    }
-
-
-    .cv-dropdown:hover .cv-arrow,
-    .cv-dropdown:focus-within .cv-arrow {
-      transform:
-        rotate(180deg);
-    }
-
-
-    .cv-menu a {
-      display: flex;
-
-      align-items: center;
-
-      gap: 12px;
-
-      padding: 11px;
-
-      border-radius: 6px;
-
-      text-decoration: none;
-
-      transition:
-        background 0.18s ease;
-    }
-
-
-    .cv-menu a:hover {
-      background: #eef6fa;
-    }
-
-
-    .cv-lang {
-      width: 35px;
-      height: 35px;
-
-      flex:
-        0 0 35px;
-
-      display: grid;
-
-      place-items: center;
-
-      border-radius: 50%;
-
-      background:
-        var(--blue-soft);
-
-      color:
-        var(--blue);
-
-      font-size: 10px;
-
-      font-weight: 850;
-
-      letter-spacing: 0.5px;
-    }
-
-
-    .cv-menu strong {
-      display: block;
-
-      color: var(--navy-900);
-
-      font-size: 13px;
-
-      line-height: 1.25;
-    }
-
-
-    .cv-menu small {
-      display: block;
-
-      color: var(--muted);
-
-      font-size: 10px;
-
-      margin-top: 2px;
+    .btn-cv:hover::before {
+      color: var(--blue);
     }
 
 
 
     /* ==========================================================
-       PORTRAIT
+       07. PORTRAIT
        ========================================================== */
 
     .portrait-zone {
@@ -1173,8 +988,8 @@
       background:
         linear-gradient(
           145deg,
-          rgba(255,255,255,0.90),
-          rgba(235,244,248,0.82)
+          rgba(255,255,255,0.91),
+          rgba(235,244,248,0.83)
         );
 
       border:
@@ -1183,9 +998,6 @@
       border-radius: 13px;
 
       backdrop-filter:
-        blur(12px);
-
-      -webkit-backdrop-filter:
         blur(12px);
 
       box-shadow:
@@ -1301,7 +1113,7 @@
 
 
     /* ==========================================================
-       GENERAL SECTIONS
+       08. GENERAL SECTIONS
        ========================================================== */
 
     .section {
@@ -1383,7 +1195,7 @@
 
 
     /* ==========================================================
-       PROFILE
+       09. PROFILE
        ========================================================== */
 
     .profile-grid {
@@ -1408,7 +1220,7 @@
       border:
         1px solid var(--line);
 
-      border-radius: var(--radius);
+      border-radius: 10px;
 
       box-shadow:
         0 7px 24px rgba(7,31,51,0.035);
@@ -1467,7 +1279,7 @@
 
 
     /* ==========================================================
-       EXPERTISE
+       10. EXPERTISE
        ========================================================== */
 
     .expertise-grid {
@@ -1488,7 +1300,7 @@
       padding: 29px;
 
       background:
-        rgba(255,255,255,0.92);
+        rgba(255,255,255,0.94);
 
       border:
         1px solid var(--line);
@@ -1581,7 +1393,7 @@
 
 
     /* ==========================================================
-       EXPERIENCE
+       11. EXPERIENCE
        ========================================================== */
 
     .experience-main {
@@ -1654,7 +1466,7 @@
 
 
     /* ==========================================================
-       RESEARCH
+       12. RESEARCH
        ========================================================== */
 
     .research-grid {
@@ -1814,8 +1626,7 @@
 
       border-radius: 50%;
 
-      background:
-        var(--green-orcid);
+      background: var(--orcid);
 
       color: white;
 
@@ -1851,9 +1662,6 @@
       font-size: 12px;
 
       font-weight: 650;
-
-      transition:
-        color 0.18s ease;
     }
 
 
@@ -1875,11 +1683,6 @@
 
       border-bottom:
         1px solid var(--line);
-    }
-
-
-    .publication:last-child {
-      margin-bottom: 0;
     }
 
 
@@ -1968,8 +1771,7 @@
 
       font-weight: 750;
 
-      transition:
-        0.2s ease;
+      transition: 0.2s ease;
     }
 
 
@@ -1994,7 +1796,7 @@
 
 
     /* ==========================================================
-       EDUCATION
+       13. EDUCATION
        ========================================================== */
 
     .two-column {
@@ -2077,7 +1879,7 @@
 
 
     /* ==========================================================
-       CONTACT
+       14. CONTACT
        ========================================================== */
 
     .contact {
@@ -2164,11 +1966,9 @@
 
       text-decoration: none;
 
-      backdrop-filter:
-        blur(8px);
+      backdrop-filter: blur(8px);
 
-      transition:
-        0.23s ease;
+      transition: 0.23s ease;
     }
 
 
@@ -2210,18 +2010,16 @@
 
 
     /* ==========================================================
-       FOOTER
+       15. FOOTER
        ========================================================== */
 
     footer {
       padding:
         25px 0;
 
-      background:
-        #051724;
+      background: #051724;
 
-      color:
-        #829bac;
+      color: #829bac;
 
       border-top:
         1px solid rgba(255,255,255,0.05);
@@ -2241,7 +2039,7 @@
 
 
     /* ==========================================================
-       RESPONSIVE
+       16. RESPONSIVE
        ========================================================== */
 
     @media (max-width: 1000px) {
@@ -2309,11 +2107,6 @@
           repeat(2, 1fr);
       }
 
-
-      .geo-grid {
-        opacity: 0.45;
-      }
-
     }
 
 
@@ -2347,22 +2140,11 @@
 
 
       .buttons {
-        align-items: stretch;
+        flex-direction: column;
       }
 
 
-      .btn,
-      .cv-dropdown {
-        width: 100%;
-      }
-
-
-      .cv-button {
-        width: 100%;
-      }
-
-
-      .cv-menu {
+      .btn {
         width: 100%;
       }
 
@@ -2410,7 +2192,6 @@
       *,
       *::before,
       *::after {
-
         animation-duration:
           0.01ms !important;
 
@@ -2419,13 +2200,11 @@
 
         scroll-behavior:
           auto !important;
-
       }
 
     }
 
   </style>
-
 </head>
 
 
@@ -2457,39 +2236,27 @@
       <ul class="nav-links">
 
         <li>
-          <a href="#profile">
-            Profile
-          </a>
+          <a href="#profile">Profile</a>
         </li>
 
         <li>
-          <a href="#expertise">
-            Expertise
-          </a>
+          <a href="#expertise">Expertise</a>
         </li>
 
         <li>
-          <a href="#experience">
-            Experience
-          </a>
+          <a href="#experience">Experience</a>
         </li>
 
         <li>
-          <a href="#research">
-            Research
-          </a>
+          <a href="#research">Research</a>
         </li>
 
         <li>
-          <a href="#education">
-            Education
-          </a>
+          <a href="#education">Education</a>
         </li>
 
         <li>
-          <a href="#contact">
-            Contact
-          </a>
+          <a href="#contact">Contact</a>
         </li>
 
       </ul>
@@ -2546,6 +2313,7 @@
         GEOSPATIAL REFERENCE
       </div>
 
+
       <div class="map-coordinate coord-2">
         TERRITORIAL ANALYSIS
       </div>
@@ -2564,7 +2332,7 @@
 
 
         <div class="hero-kicker">
-          Territories · Land · Geospatial Intelligence
+          Territories · Land · Geospatial Intelligence · Research
         </div>
 
 
@@ -2588,12 +2356,12 @@
 
           State Engineer and PhD in Geography with over twelve years
           of experience at the intersection of territorial analysis,
-          geographic information, land governance and spatial
-          decision support.
+          geographic information, land governance and spatial decision
+          support.
 
           My work combines professional engineering practice,
-          field-based territorial knowledge, scientific research
-          and advanced geospatial technologies.
+          field-based territorial knowledge, scientific research and
+          advanced geospatial technologies.
 
         </p>
 
@@ -2633,7 +2401,10 @@
 
 
 
-        <!-- HERO BUTTONS -->
+        <!-- ==================================================
+             HERO BUTTONS
+             BOTH CV VERSIONS ARE VISIBLE
+             ================================================== -->
 
         <div class="buttons">
 
@@ -2652,99 +2423,41 @@
 
 
 
-          <!-- CV DROPDOWN -->
+          <!-- ENGLISH CV -->
 
-          <div class="cv-dropdown">
+          <a
+            href="Badr_KHALLOUQ_CV_ENGLISH.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary btn-cv">
 
+            CV · English
 
-            <button
-              type="button"
-              class="btn btn-secondary cv-button"
-              aria-haspopup="true">
-
-              Download CV
-
-              <span class="cv-arrow">
-                ⌄
-              </span>
-
-            </button>
+          </a>
 
 
 
-            <div class="cv-menu">
+          <!-- FRENCH CV -->
 
+          <a
+            href="Badr_KHALLOUQ_CV_FRENCH.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary btn-cv">
 
-              <a
-                href="Badr_KHALLOUQ_CV_ENGLISH.pdf"
-                target="_blank"
-                rel="noopener noreferrer">
+            CV · Français
 
-                <span class="cv-lang">
-                  EN
-                </span>
-
-                <span>
-
-                  <strong>
-                    English
-                  </strong>
-
-                  <small>
-                    Curriculum Vitae
-                  </small>
-
-                </span>
-
-              </a>
+          </a>
 
 
 
-              <a
-                href="Badr_KHALLOUQ_CV_FRENCH.pdf"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                <span class="cv-lang">
-                  FR
-                </span>
-
-                <span>
-
-                  <strong>
-                    Français
-                  </strong>
-
-                  <small>
-                    Curriculum Vitae
-                  </small>
-
-                </span>
-
-              </a>
-
-
-            </div>
-
-          </div>
-
-
+          <!-- RESEARCH -->
 
           <a
             href="#research"
             class="btn btn-secondary">
 
             Research & Publications
-
-          </a>
-
-
-
-          <a
-            href="#profile"
-            class="btn btn-secondary">
-
-            Explore Profile
 
           </a>
 
@@ -2759,6 +2472,7 @@
       <!-- PORTRAIT -->
 
       <div class="portrait-zone">
+
 
         <div class="portrait-card">
 
@@ -2790,6 +2504,7 @@
 
 
         </div>
+
 
       </div>
 
@@ -2855,15 +2570,14 @@
 
           <p>
 
-            State Engineer in Urban Planning and Territorial
-            Development with more than twelve years of professional
-            experience.
+            State Engineer in Urban Planning and Territorial Development
+            with more than twelve years of professional experience.
 
             Since 2013, professional practice has included national
             cartographic operations, territorial and spatial analysis,
             geographic data production and validation, field
-            investigations, geographic reference systems and
-            geospatial decision support.
+            investigations, geographic reference systems and geospatial
+            decision support.
 
           </p>
 
@@ -3060,8 +2774,8 @@
 
           <p>
             Urban and territorial planning, land-use planning,
-            territorial development, spatial analysis and
-            territorial decision-support approaches.
+            territorial development, spatial analysis and territorial
+            decision-support approaches.
           </p>
 
         </article>
@@ -3100,6 +2814,15 @@
         </h2>
 
 
+        <p class="section-description">
+
+          Professional experience combining national cartographic
+          operations, territorial analysis, geospatial engineering,
+          teaching and applied expertise.
+
+        </p>
+
+
       </div>
 
 
@@ -3124,21 +2847,20 @@
 
           <div class="experience-organisation">
 
-            National Land Conservation, Cadastre and Cartography
-            Agency (ANCFCC) · Department of Base Cartography
+            National Land Conservation, Cadastre and Cartography Agency
+            (ANCFCC) · Department of Base Cartography
 
           </div>
 
 
           <p>
 
-            Professional activities include field missions across
-            nearly 90% of the Moroccan territory, territorial and
-            cartographic data collection and validation, national
-            cartographic reference data operations, analysis of
-            spatial and territorial dynamics, geographic reference
-            systems and the development of geospatial tools for
-            field data collection and quality control.
+            Professional activities include field missions across nearly
+            90% of the Moroccan territory, territorial and cartographic
+            data collection and validation, national cartographic
+            reference data operations, analysis of spatial and territorial
+            dynamics, geographic reference systems and the development
+            of geospatial tools for field data collection and quality control.
 
           </p>
 
@@ -3177,11 +2899,11 @@
 
           <p>
 
-            Teaching advanced GIS applied to territorial planning
-            and supervising Master's-level work in Geospatial
-            Sciences and Land Governance, including projects
-            involving GeoAI, Machine Learning, Google Earth Engine,
-            remote sensing and spatial predictive modelling.
+            Teaching advanced GIS applied to territorial planning and
+            supervising Master's-level work in Geospatial Sciences and
+            Land Governance, including projects involving GeoAI,
+            Machine Learning, Google Earth Engine, remote sensing and
+            spatial predictive modelling.
 
           </p>
 
@@ -3281,7 +3003,7 @@
       <div class="research-grid">
 
 
-        <!-- RESEARCH PROFILE -->
+        <!-- RESEARCH FOCUS -->
 
         <aside class="research-focus">
 
@@ -3309,37 +3031,21 @@
 
           <div class="research-keywords">
 
-            <span>
-              Collective Lands
-            </span>
+            <span>Collective Lands</span>
 
-            <span>
-              Land Governance
-            </span>
+            <span>Land Governance</span>
 
-            <span>
-              LGAF
-            </span>
+            <span>LGAF</span>
 
-            <span>
-              Melkisation
-            </span>
+            <span>Melkisation</span>
 
-            <span>
-              Territorial Dynamics
-            </span>
+            <span>Territorial Dynamics</span>
 
-            <span>
-              GIS-AHP
-            </span>
+            <span>GIS-AHP</span>
 
-            <span>
-              Urban Sprawl
-            </span>
+            <span>Urban Sprawl</span>
 
-            <span>
-              Spatial Modelling
-            </span>
+            <span>Spatial Modelling</span>
 
           </div>
 
@@ -3451,9 +3157,9 @@
 
             <h4>
 
-              Urban Sprawl and Collective Land Vulnerability in
-              Irrigated Perimeters: A Geospatial and Predictive
-              Modeling Approach Using LCM in Sidi Kacem, Morocco
+              Urban Sprawl and Collective Land Vulnerability in Irrigated
+              Perimeters: A Geospatial and Predictive Modeling Approach
+              Using LCM in Sidi Kacem, Morocco
 
             </h4>
 
@@ -3501,18 +3207,18 @@
 
             <h4>
 
-              Collective Land Reform and Good Land Governance in
-              Morocco: A Contextualized LGAF-Based Assessment of
-              the Melkisation Policy in Sidi Kacem
+              Collective Land Reform and Good Land Governance in Morocco:
+              A Contextualized LGAF-Based Assessment of the Melkisation
+              Policy in Sidi Kacem
 
             </h4>
 
 
             <p>
 
-              Research addressing collective land reform,
-              institutional land governance and the territorial
-              implications of melkisation.
+              Research addressing collective land reform, institutional
+              land governance and the territorial implications of
+              melkisation.
 
             </p>
 
@@ -3533,10 +3239,9 @@
 
             <h4>
 
-              GIS-AHP Multi-Criteria Analysis for Mapping
-              Agricultural Land Valorization Potential of Collective
-              Farmlands in the Sidi Kacem Irrigated Perimeter,
-              Morocco
+              GIS-AHP Multi-Criteria Analysis for Mapping Agricultural
+              Land Valorization Potential of Collective Farmlands in
+              the Sidi Kacem Irrigated Perimeter, Morocco
 
             </h4>
 
@@ -3544,8 +3249,8 @@
             <p>
 
               GIS-based multi-criteria spatial assessment combining
-              land characteristics, accessibility, agricultural
-              conditions and AHP-based decision modelling.
+              agricultural conditions, land characteristics,
+              accessibility and AHP-based decision modelling.
 
             </p>
 
