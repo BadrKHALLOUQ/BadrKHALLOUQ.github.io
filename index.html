@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -2025,8 +2024,313 @@ footer {
 }
 
 
+
 /* ============================================================
-   21. REDUCED MOTION
+   21. SELECTED GEOSPATIAL RESEARCH
+   ============================================================ */
+
+.selected-maps {
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f6f9fb 100%);
+}
+
+.maps-intro-note {
+  max-width: 820px;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--blue);
+  background: #eef6fa;
+  color: #45667b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.map-projects {
+  display: grid;
+  gap: 42px;
+}
+
+.map-project {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(300px, 0.58fr);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.map-project:nth-child(even) {
+  grid-template-columns: minmax(300px, 0.58fr) minmax(0, 1.42fr);
+}
+
+.map-project:nth-child(even) .map-visual {
+  order: 2;
+}
+
+.map-project:nth-child(even) .map-content {
+  order: 1;
+}
+
+.map-visual {
+  position: relative;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background:
+    linear-gradient(135deg, #eef4f7, #ffffff);
+  border-right: 1px solid var(--border);
+}
+
+.map-project:nth-child(even) .map-visual {
+  border-right: 0;
+  border-left: 1px solid var(--border);
+}
+
+.map-visual img {
+  width: 100%;
+  height: auto;
+  max-height: 590px;
+  display: block;
+  object-fit: contain;
+  background: white;
+  cursor: zoom-in;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.map-visual:hover img {
+  transform: scale(1.012);
+  box-shadow: 0 14px 34px rgba(8, 35, 55, 0.10);
+}
+
+.map-badge {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  z-index: 2;
+  padding: 7px 10px;
+  border-radius: 4px;
+  color: white;
+  background: rgba(6, 27, 43, 0.88);
+  backdrop-filter: blur(8px);
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.map-content {
+  padding: 38px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.map-number {
+  margin-bottom: 10px;
+  color: var(--blue);
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.map-content h3 {
+  margin-bottom: 15px;
+  color: var(--navy);
+  font-size: 24px;
+  line-height: 1.38;
+  font-weight: 700;
+}
+
+.map-content p {
+  margin-bottom: 17px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.map-method {
+  margin: 2px 0 19px;
+  padding-top: 17px;
+  border-top: 1px solid var(--border);
+}
+
+.map-method strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--navy-light);
+  font-size: 14px;
+}
+
+.map-method span {
+  color: #557286;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.map-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.map-tags span {
+  padding: 6px 9px;
+  border: 1px solid #c7dae4;
+  border-radius: 4px;
+  background: #f7fafc;
+  color: #42647a;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 650;
+}
+
+.map-link {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid #b9ceda;
+  border-radius: 5px;
+  color: var(--navy);
+  background: white;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.map-link:hover {
+  color: white;
+  background: var(--blue);
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.map-link-arrow {
+  font-size: 17px;
+}
+
+.map-caption {
+  margin-top: 8px;
+  color: #708897;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Full-screen map viewer */
+
+.map-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: rgba(3, 16, 26, 0.94);
+}
+
+.map-modal.is-open {
+  display: flex;
+}
+
+.map-modal img {
+  max-width: 96vw;
+  max-height: 91vh;
+  object-fit: contain;
+  background: white;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+}
+
+.map-modal-close {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 50%;
+  color: white;
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.map-modal-close:hover {
+  background: rgba(255,255,255,0.16);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  .map-project,
+  .map-project:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .map-project:nth-child(even) .map-visual,
+  .map-project:nth-child(even) .map-content {
+    order: initial;
+  }
+
+  .map-visual,
+  .map-project:nth-child(even) .map-visual {
+    min-height: auto;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 680px) {
+  .map-projects {
+    gap: 28px;
+  }
+
+  .map-visual {
+    padding: 10px;
+  }
+
+  .map-badge {
+    top: 18px;
+    left: 18px;
+    font-size: 11px;
+  }
+
+  .map-content {
+    padding: 28px 24px;
+  }
+
+  .map-content h3 {
+    font-size: 21px;
+  }
+
+  .map-content p {
+    font-size: 15px;
+  }
+
+  .map-modal {
+    padding: 10px;
+  }
+}
+
+
+/* ============================================================
+   22. REDUCED MOTION
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2083,6 +2387,10 @@ footer {
 
       <li>
         <a href="#research">Research</a>
+      </li>
+
+      <li>
+        <a href="#selected-maps">Selected Maps</a>
       </li>
 
       <li>
@@ -2992,6 +3300,287 @@ footer {
 
 
 
+
+<!-- ==========================================================
+     SELECTED GEOSPATIAL RESEARCH
+     ========================================================== -->
+
+<section id="selected-maps" class="section selected-maps">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-kicker">
+        Selected Geospatial Research
+      </div>
+
+      <h2 class="section-title">
+        Three maps illustrating the core of my spatial research
+      </h2>
+
+      <p class="section-lead">
+        A curated selection from a broader cartographic production developed
+        through doctoral and applied research. These maps illustrate three
+        complementary dimensions of territorial change in the Sidi Kacem
+        region: urban expansion, collective-land vulnerability and
+        agricultural land valorization potential.
+      </p>
+
+      <div class="maps-intro-note">
+        The portfolio intentionally presents only three representative maps
+        rather than the full cartographic corpus, allowing each visual to
+        communicate a distinct research question, analytical method and
+        territorial implication.
+      </div>
+
+    </div>
+
+
+    <div class="map-projects">
+
+
+      <!-- MAP 01 -->
+      <article class="map-project">
+
+        <div class="map-visual">
+          <div class="map-badge">Urban Dynamics</div>
+
+          <img
+            src="research-urban-expansion-1985-2050.png"
+            alt="Urban expansion from 1985 to 2022 and projected growth for 2040 and 2050 in the Sidi Kacem study area"
+            class="zoomable-map"
+            loading="lazy">
+        </div>
+
+        <div class="map-content">
+
+          <div class="map-number">
+            Selected Map · 01
+          </div>
+
+          <h3>
+            Urban Expansion and Projected Growth · 1985–2050
+          </h3>
+
+          <p>
+            Multi-temporal mapping of built-up expansion across the study area,
+            combining observed urban development in 1985, 2005 and 2022 with
+            projected built-up growth for 2040 and 2050.
+          </p>
+
+          <p>
+            The map highlights the spatial concentration of urbanization around
+            existing settlements and major transport corridors, providing the
+            spatial basis for assessing future pressure on agricultural and
+            collective lands.
+          </p>
+
+          <div class="map-method">
+            <strong>Research dimension</strong>
+            <span>
+              Land-use change · Urban growth modelling · Spatial projection ·
+              Territorial dynamics
+            </span>
+          </div>
+
+          <div class="map-tags">
+            <span>GIS</span>
+            <span>Urban Sprawl</span>
+            <span>1985–2050</span>
+            <span>Predictive Modelling</span>
+            <span>Sidi Kacem</span>
+          </div>
+
+          <a
+            href="research-urban-expansion-1985-2050.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-link">
+            View full map
+            <span class="map-link-arrow">↗</span>
+          </a>
+
+          <div class="map-caption">
+            Click directly on the map for an enlarged viewer.
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- MAP 02 -->
+      <article class="map-project">
+
+        <div class="map-visual">
+          <div class="map-badge">Land Vulnerability</div>
+
+          <img
+            src="research-land-vulnerability-2050.png"
+            alt="Prospective vulnerability of collective lands to urbanization by 2050 in the Sidi Kacem study area"
+            class="zoomable-map"
+            loading="lazy">
+        </div>
+
+        <div class="map-content">
+
+          <div class="map-number">
+            Selected Map · 02
+          </div>
+
+          <h3>
+            Prospective Vulnerability of Collective Lands to Urbanization · 2050
+          </h3>
+
+          <p>
+            Prospective spatial assessment of collective-land exposure to
+            urbanization by 2050. Vulnerability levels distinguish areas of
+            very low, low, moderate and high prospective pressure.
+          </p>
+
+          <p>
+            The analysis identifies spatial hotspots where projected urban
+            expansion may increasingly interact with collective farmland,
+            supporting anticipatory land governance and territorial planning.
+          </p>
+
+          <div class="map-method">
+            <strong>Research dimension</strong>
+            <span>
+              Collective lands · Prospective vulnerability · Urbanization
+              pressure · Land governance
+            </span>
+          </div>
+
+          <div class="map-tags">
+            <span>Collective Lands</span>
+            <span>2050</span>
+            <span>Vulnerability</span>
+            <span>Land Governance</span>
+            <span>Spatial Planning</span>
+          </div>
+
+          <a
+            href="research-land-vulnerability-2050.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-link">
+            View full map
+            <span class="map-link-arrow">↗</span>
+          </a>
+
+          <div class="map-caption">
+            Click directly on the map for an enlarged viewer.
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- MAP 03 -->
+      <article class="map-project">
+
+        <div class="map-visual">
+          <div class="map-badge">GIS-AHP</div>
+
+          <img
+            src="research-land-valorization-sidi-kacem.png"
+            alt="Spatial distribution of agricultural land valorization potential in collective farmlands in the Sidi Kacem irrigated perimeter"
+            class="zoomable-map"
+            loading="lazy">
+        </div>
+
+        <div class="map-content">
+
+          <div class="map-number">
+            Selected Map · 03
+          </div>
+
+          <h3>
+            Agricultural Land Valorization Potential in Collective Farmlands
+          </h3>
+
+          <p>
+            Spatial representation of agricultural land valorization potential
+            within collective farmlands of the Sidi Kacem irrigated perimeter,
+            classified into low, medium and high potential.
+          </p>
+
+          <p>
+            The final index integrates irrigation accessibility, existing
+            crops, soil characteristics, road accessibility and slope through
+            a GIS-based multi-criteria framework supported by the Analytic
+            Hierarchy Process (AHP).
+          </p>
+
+          <div class="map-method">
+            <strong>Research dimension</strong>
+            <span>
+              GIS-AHP · Multi-criteria decision analysis · Agricultural land ·
+              Spatial decision support
+            </span>
+          </div>
+
+          <div class="map-tags">
+            <span>GIS-AHP</span>
+            <span>MCDA</span>
+            <span>Agricultural Land</span>
+            <span>Collective Farmlands</span>
+            <span>Valorization Potential</span>
+          </div>
+
+          <a
+            href="research-land-valorization-sidi-kacem.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-link">
+            View full map
+            <span class="map-link-arrow">↗</span>
+          </a>
+
+          <div class="map-caption">
+            Click directly on the map for an enlarged viewer.
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Full-screen image viewer -->
+<div
+  id="mapModal"
+  class="map-modal"
+  aria-hidden="true"
+  role="dialog"
+  aria-label="Enlarged research map">
+
+  <button
+    id="mapModalClose"
+    class="map-modal-close"
+    type="button"
+    aria-label="Close enlarged map">
+    ×
+  </button>
+
+  <img
+    id="mapModalImage"
+    src=""
+    alt="Enlarged research map">
+
+</div>
+
+
+
 <!-- ==========================================================
      EDUCATION
      ========================================================== -->
@@ -3341,7 +3930,54 @@ footer {
 </footer>
 
 
+
+<script>
+(function () {
+  const modal = document.getElementById("mapModal");
+  const modalImage = document.getElementById("mapModalImage");
+  const closeButton = document.getElementById("mapModalClose");
+  const maps = document.querySelectorAll(".zoomable-map");
+
+  if (!modal || !modalImage || !closeButton) return;
+
+  function openMap(image) {
+    modalImage.src = image.src;
+    modalImage.alt = image.alt;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    closeButton.focus();
+  }
+
+  function closeMap() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    modalImage.src = "";
+  }
+
+  maps.forEach(function (image) {
+    image.addEventListener("click", function () {
+      openMap(image);
+    });
+  });
+
+  closeButton.addEventListener("click", closeMap);
+
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeMap();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+      closeMap();
+    }
+  });
+})();
+</script>
+
 </body>
 
 </html>
-```
